@@ -1,0 +1,100 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Perosnal Website</title>
+  <meta name="description" content="Perosonal Website">
+  <meta name="author" content="Euntae Ki">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="flex-container">
+        <div id="About" class="active">About Me</div>
+        <div id="Personal">Personal Project</div>
+        <a target="_blank" href="Euntae Ki_Resume.pdf"><div id="Resume">Resume</div></a>
+        <div id="Contact">Contact</div>
+    </div>
+    <div class="background"></div>
+    <div id="background2"></div>
+    <hr id="sepline">
+    <div id="about-body">
+        <p class="text-content header">About Me</p>
+        <p class="text-content" id="about-text">
+                Hello! My name is Euntae Ki and I'm a senior at University of Washington. I major in Electrical & Computer Engineering and am expected to graduate in June 2020. I have worked with various hardware/software projects, where I learned
+                <br><br>
+                Arduino | Quartus  | MySQL | Bash
+                <br>
+                C/C++ | C# | Java | Verilog | FXML | HTML | CSS
+                <br><br>
+                I currently work at UW Finance System & Data Analysis team as a Technology Student Assistant, where I maintain equipment and websites for UW Finance teams.
+                <br><br>
+                I enjoy playing videogames (Hearthstone, League of Legends, Warcraft III), musical instruments (Ukulele, Piano), and reading Korean literature.
+                <br><br>
+                Feel free to contact me if you have any questions!
+        </p>
+        <div class="picture" id="profile-picture"></div>
+        <div class="profile-container">
+            <hr id="break1">
+            <a id="Name">Euntae Ki</a>
+            <hr id="break2">
+            <a id="School">University of Washington</a>
+            <a id="Major">Electrical Engineering, Senior</a>
+            <hr id="break3">
+            </div>
+    </div>
+    <div id="personal-body" style="display:none">
+        <p class="text-content header">Doctor at Your Fingertip</p>
+        <p class="text-content personal-text">
+            This was a class project I worked on as a group while taking EE 474.
+            Its functionality include:
+        </p>
+        <ol id="personal-list">
+            <li>Measurement of
+                <ol type="a">
+                    <li>Temperature</li>
+                    <li>Blood Pressure</li>
+                    <li>Pulse Rate</li>
+                    <li>Respiration Rate</li>
+                    <li>EKG</li>
+                </ol>
+            </li>
+            <li>Computation of
+                <ol type="a">
+                    <li>F to C</li>
+                    <li>mmHg</li>
+                    <li>Hz to BPM</li>
+                    <li>Fourier Transformation</li>
+                </ol>
+            </li>
+            <li>Alarm</li>
+            <li>Remote Control (via PuTTY)</li>
+        </ol>
+        <p class="text-content personal-text" id="personal-text-foot">
+            Which has been built using Arduino MEGA 2560 and Uno.
+            Code was written in C, available here:
+            https://github.com/a1m0le/ee474-A2
+        </p>
+        <img src="Arduino.svg" class="picture" id="personal-picture"></img>
+        <hr id="personal-hr">
+        <p class="text-content" id="personal-caption">Arduino MEGA 2560, Uno, and circuit components for Doctor at Your Fingertip</p>
+    </div>
+    <div id="contact-body" style="display:none">
+        <p class="text-content header">Contact</p>
+        <p class="text-content" id="contact-text">
+            If you have any questions, feel free to contact me!
+            <br>
+            You can also find me on LinkedIn and GitHub. 
+            <br><br>
+            Email : euntae@ece.uw.edu
+            <br>
+            LinkedIn Profile : https://www.linkedin.com/in/euntae-ki/
+            <br>
+            GitHub : https://github.com/EuntaeKi
+        </p>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
