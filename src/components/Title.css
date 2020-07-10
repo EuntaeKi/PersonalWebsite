@@ -1,0 +1,16 @@
+.cursor-line {
+    border-left: 1px solid #838383;
+    height: 6rem;
+    margin: 0.5rem 0rem 1rem 0.5rem;
+}
+
+.cursor-line-transparent {
+    border-left: 1px solid #FFFFFF00;
+    height: 6rem;
+    margin: 0.5rem 0rem 1rem 0.5rem;
+}
+
+h1 {
+    font-size: 6rem;
+    color: #eeeeee;
+}

@@ -1,0 +1,11 @@
+.social-icon {
+    color: #CFCFCF;
+    transition: color 0.25s;
+    margin-left: 8px;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.social-icon:hover {
+    color: #ffffff;
+}

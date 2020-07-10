@@ -1,0 +1,47 @@
+.content-container {
+    border: 1px solid #838383;
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 2rem;
+    padding: 2rem 5rem 2rem 5rem;
+    color: #EEEEEE;
+    align-content: center;
+    margin-bottom: 4rem;
+}
+
+.heading-bar {
+    border-bottom: 0.5rem solid #7EACBD;
+    width: 3rem;
+    border-bottom-right-radius: 0.75rem;
+    margin-top: 0.5rem;
+}
+
+@font-face {
+    font-family: 'OCR-A';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../img/OCR-A-Extended-V2/OCR-A-Extended-V2.eot'); /* IE9 Compat Modes */
+    src: local('OCR A'), local('OCR-A'),
+         url('../img/OCR-A-Extended-V2/OCR-A-Extended-V2.eot') format('embedded-opentype'), /* IE6-IE8 */
+         url('../img/OCR-A-Extended-V2/OCR-A-Extended-V2.woff2') format('woff2'), /* Super Modern Browsers */
+         url('../img/OCR-A-Extended-V2/OCR-A-Extended-V2.woff') format('woff'), /* Modern Browsers */
+         url('../img/OCR-A-Extended-V2/OCR-A-Extended-V2.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('../img/OCR-A-Extended-V2/OCR-A-Extended-V2.svg') format('svg'); /* Legacy iOS */
+}
+
+@font-face {
+    font-family: 'Segoe UI';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../img/Segoe-UI/Segoe-UI.eot'); /* IE9 Compat Modes */
+    src: local('Segoe UI'), local('SegoiUI'),
+         url('../img/Segoe-UI/Segoe-UI.eot') format('embedded-opentype'), /* IE6-IE8 */
+         url('../img/Segoe-UI/Segoe-UI.woff2') format('woff2'), /* Super Modern Browsers */
+         url('../img/Segoe-UI/Segoe-UI.woff') format('woff'), /* Modern Browsers */
+         url('../img/Segoe-UI/Segoe-UI.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('../img/Segoe-UI/Segoe-UI.svg') format('svg'); /* Legacy iOS */
+}
+  
+body {
+    font-family: 'OCR-A';
+}

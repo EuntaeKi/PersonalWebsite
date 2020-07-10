@@ -1,0 +1,68 @@
+.app-background {
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+}
+
+.app-background-hidden {
+  overflow: hidden;
+}
+
+.app-background-overlay {
+  overflow: overlay;
+}
+
+.top-nav-bar {
+  max-width: 100vw;
+  width: 100vw;
+  background-color: #ffffff10;
+  margin-bottom: 3rem;
+}
+
+.top-nav-bar-container {
+  align-self: center;
+  box-sizing: border-box;
+}
+
+#selected {
+  text-decoration: underline;
+}
+
+.butn {
+  border-radius: 0px;
+  border-width: 0px;
+  background-color: #ffffff00;
+  border-color: #ffffff00;
+  box-shadow: 0 0 0;
+  border-style: none;
+  color: #CFCFCF;
+  padding: 1rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.hoverbtn {
+  color: #eeeeee;
+  background-color: #e4e4e410;
+  transition: color .25s ease-in-out, background-color .25s ease-in-out;
+}
+
+.butn:active, .butn:focus, .butn:focus-within, .butn:visited {
+  border-radius: 0px;
+  border-width: 0px;
+  box-shadow: 0 0 0;
+  border-style: none;
+  outline-style: none;
+}
+
+.footer-container {
+  color: #CFCFCF;
+  background-color: #482B47;
+  align-content: center;
+  text-align: center;
+}
+
+.footer-text {
+  font-size: 0.75rem;
+  margin-bottom: 0.8rem;
+}
