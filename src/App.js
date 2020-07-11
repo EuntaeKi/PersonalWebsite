@@ -1,6 +1,6 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch, Redirect } from "react-router-dom";
 import './App.css';
 import './components/Library.css';
 
@@ -35,7 +35,6 @@ class App extends React.Component {
 
   render() {
     let appBackgroundImage;
-    
     switch(window.location.pathname.substring(1)) {
       case "home":
         appBackgroundImage = { backgroundImage: `url(${ Background })` }
@@ -70,14 +69,15 @@ class App extends React.Component {
           handleNavEnter={ (key) => { this.handleEnter(key) }}
         />
         <Switch>
-          <Route path="/about"> <About /> </Route>
-          <Route path="/resume"> <Resume /> </Route>
-          <Route path="/courses"> <Courses /> </Route>
-          <Route path="/projects"> <Projects /> </Route>
-          <Route path="/contact"> <Contact /> </Route>
-          <Route path="/"> <Home /> </Route>
+          <Route exact path="/about"> <About /> </Route>
+          <Route exact path="/resume"> <Resume /> </Route>
+          <Route exact path="/courses"> <Courses /> </Route>
+          <Route exact path="/projects"> <Projects /> </Route>
+          <Route exact path="/contact"> <Contact /> </Route>
+          <Route exact path="/home"> <Home /> </Route>
+          <Route exact path="/"> <Redirect to="/home" /> </Route>
         </Switch>
-        { window.location.pathname.substring(1) !== "home" &&
+        { (window.location.pathname.substring(1) !== "home" && window.location.pathname !== "/") &&
           <Footer
             hover={ this.state.hover }
             active={ this.state.active }

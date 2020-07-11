@@ -23,10 +23,13 @@ function ResumeCell(props){
   return (
       <div className="resume-cell-container">
         <div className="row">
-          <div className="col-3 resume-cell-header">
-            <h2>{ props.heading }</h2>
+          <div className="col-4 resume-cell-header">
+            <h2> { props.heading } </h2>
+            <div className="heading-container">
+              <div className="resume-heading-bar" />
+            </div>
           </div>
-          <div className="col-9 resume-cell-content">
+          <div className="col-8 resume-cell-content">
             { Object.keys(props.parsedItems).map((key, index) => {
                 let tempJSONLoc = ResJSON[props.itemType][key];
                 return <ResumeContent 
@@ -49,10 +52,12 @@ function ResumeContent(props){
     <React.Fragment>
       <p className="resume-cell-subheader">{ props.subheading }</p>
       <p className="resume-cell-subtext">{ props.subtext }</p>
-      { Object.keys(props.text).map((key, index) => 
-          <span className="row resume-cell-text" key={ index }> { props.JSONRef["text"][key] } </span>
-        )
-      }
+      <div className="resume-cell-text-container">
+        { Object.keys(props.text).map((key, index) => 
+            <li className="resume-cell-text" key={ index }> &#183; { props.JSONRef["text"][key] } </li>
+          )
+        }
+      </div>
     </React.Fragment>
   )
 }

@@ -11,10 +11,32 @@
 
 .resume-cell-subheader {
     font-weight: bold;
-    font-size: 1.5rem;
+    font-size: 1.75rem;
 }
 
 .resume-cell-subtext {
     font-size: 16px;
     margin-top: -1.25rem;
+    margin-bottom: 0.25rem;
+}
+
+.resume-cell-text {
+    flex-wrap: wrap;
+    display: flex;
+}
+
+.resume-cell-text-container {
+    margin: 0 0 2rem 1rem;
+}
+
+.resume-heading-bar {
+    border-bottom: 0.5rem solid #b7a57a;
+    border-bottom-left-radius: 0.5rem;
+}
+.heading-container {
+    padding-left: 3rem;
+}
+
+h2 {
+    font-size: 2.5rem;
 }

@@ -52,8 +52,8 @@
             "subheading": "Lab Assistant", 
             "subtext": "University of Washington GRID LAB | Sept 2016 - May 2017", 
             "text": [ 
-                "- Developed a program to test the error-related brain signals in brain-injured patients",
-                "- Used OpenHaptics API and Phantom Omni (3D Stylus) in Unity3D to customize the viscosity of the stylus to invoke error-related brain signals"
+                "Developed a program to test the error-related brain signals in brain-injured patients",
+                "Used OpenHaptics API and Phantom Omni (3D Stylus) in Unity3D to customize the viscosity of the stylus to invoke error-related brain signals"
             ]
         }
     }
