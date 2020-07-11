@@ -1,0 +1,60 @@
+{
+    "education": {
+        "university": {
+            "subheading": "University of Washington", 
+            "subtext": "Seattle, WA | Sept 2016 - Jun 2020", 
+            "text": [ "B.S. Electrical and Computer Engineering, Embedded Systems", "Major GPA : 3.79/4.00" ]
+        }
+    },
+    "projects": {
+        "amazonCarry": {
+            "subheading": "Amazon Carry", 
+            "subtext": "Embedded System Capstone | Jan 2020 - Mar 2020", 
+            "text": [ 
+                "Designed a shopping cart which can detect a user and follow them using VCSEL sensor and machine learning-based edge detection",
+                "Developed a web server with Node.js on Raspberry Pi to establish bidirectional communication between the device and the user",
+                "Designed a React based web page to remotely control and customize settings",
+                "Established data transfer between the web server and the Raspberry Pi's main Python script"
+            ]
+        },
+        "armCPU": {
+            "subheading": "ARM-based Pipelined CPU", 
+            "subtext": "Computer Architecture I | Oct 2019 - Dec 2019", 
+            "text": [ 
+                "Designed a 64-bit ARM-based register file using D flip-flops",
+                "Designed a 64-bit ALU which can do the basic computations and output flags",
+                "Implemented pipelined CPU by integrating register file, ALU, program counter, instruction fetcher, and RAM module together",
+                "Implemented forwarding unit and delay slots to eliminate data hazards" 
+            ]
+        },
+        "medical": {
+            "subheading": "Portable Medical Device", 
+            "subtext": "Intro to Embedded Systems | Mar 2019 - Jun 2019", 
+            "text": [ 
+                "Programmed an Arduino MEGA 2560 and Uno to compute temperature, blood pressure, pulse rate, respiration rate, and EKG in C",
+                "Designed the GUI using Elegoo's touchscreen library",
+                "Alerted the user of irregularities when the data exceed the pre-set range",
+                "Enabled SSH connection allowing remote access to user data"
+            ]
+        }
+    },
+    "workExperience": {
+        "uwFinance": {
+            "subheading": "Technical Student Assistant", 
+            "subtext": "University of Washington Finance | Jun 2019 - Present", 
+            "text": [ 
+                "Implemented a web interface using Drupal, HTML, and CSS, for the UW Finance request system to improve IT accessibility",
+                "Developed a Python automation script that populates various forms by parsing JSON files and recording then validating the data",
+                "Wrote a PowerShell script to collect computers’ metadata and update the SQL database" 
+            ]
+        },
+        "gridLab": {
+            "subheading": "Lab Assistant", 
+            "subtext": "University of Washington GRID LAB | Sept 2016 - May 2017", 
+            "text": [ 
+                "- Developed a program to test the error-related brain signals in brain-injured patients",
+                "- Used OpenHaptics API and Phantom Omni (3D Stylus) in Unity3D to customize the viscosity of the stylus to invoke error-related brain signals"
+            ]
+        }
+    }
+}

@@ -30,24 +30,24 @@ class Title extends React.Component {
             this.setState({ 
                 stringHolder: this.state.stringHolder + this.props.titleText.charAt(this.state.stringPos),
                 stringPos: this.state.stringPos + 1,
-                timerLatency: Math.floor(Math.random() * 500 + 100),
+                // timerLatency: Math.floor(Math.random() * 500 + 100),
             });
         }
-        setTimeout(this.updateTitle, this.state.timerLatency)
+        // setTimeout(this.updateTitle, this.state.timerLatency)
     }
 
     componentDidMount() {
         this.cursorTimerID = setInterval(
             () => this.changeCursor(), 500
         );
-        this.stringTimerID = setTimeout(
-            () => this.updateTitle(), 100
+        this.stringTimerID = setInterval(
+            () => this.updateTitle(), 250
         );
     }
 
     componentWillUnmount() {
         clearInterval(this.cursorTimerID);
-        clearTimeout(this.stringTimerID);
+        clearInterval(this.stringTimerID);
     }
 
     render() {
