@@ -17,6 +17,9 @@
   width: 100vw;
   background-color: #ffffff10;
   margin-bottom: 3rem;
+  position: sticky;
+  top: 0;
+  z-index: 1;
 }
 
 .top-nav-bar-container {
@@ -57,9 +60,10 @@
 
 .footer-container {
   color: #CFCFCF;
-  background-color: #482B47;
+  background-color: #41466D;
   align-content: center;
   text-align: center;
+  padding: 1.5rem 0 1rem 0;
 }
 
 .footer-text {

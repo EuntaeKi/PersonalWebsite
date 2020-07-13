@@ -5,10 +5,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './Library.css';
 import './About.css';
 
-class About extends React.Component {
-  render() {
-    return (
-      <React.Fragment>
+function About(props) {
+  return (
+    <React.Fragment>
       <Title titleText="About Me" />
       <div className="content-container">
         <div className="row">
@@ -21,9 +20,8 @@ class About extends React.Component {
             </div>
         </div>
       </div>
-      </React.Fragment>
-    );
-  }
+    </React.Fragment>
+  );
 }
 
 export default About;

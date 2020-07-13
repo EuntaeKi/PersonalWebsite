@@ -51,10 +51,11 @@ class Title extends React.Component {
     }
 
     render() {
+        let headingColor = this.props.headingColor !== undefined ? { color: this.props.headingColor } : { color: "#eeeeee" };
         return (
             <div className="container">
                 <div className="row">
-                    <h1> { this.state.stringHolder } </h1>
+                    <h1 style={ headingColor }> { this.state.stringHolder } </h1>
                     { this.state.charNbsp ? <div><span>&nbsp;&nbsp;</span><span>&nbsp;</span></div> : ''}
                     <div className={ this.state.cursor ? "cursor-line" : "cursor-line-transparent" } />
                 </div>

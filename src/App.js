@@ -7,7 +7,6 @@ import './components/Library.css';
 import Home from './components/Home';
 import About from './components/About';
 import Resume from './components/Resume';
-import Courses from './components/Courses';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
 import SocialMedia from './components/SocialMedia';
@@ -35,24 +34,32 @@ class App extends React.Component {
 
   render() {
     let appBackgroundImage;
+    let navBarColor;
+    let footerTheme;
     switch(window.location.pathname.substring(1)) {
       case "home":
-        appBackgroundImage = { backgroundImage: `url(${ Background })` }
+        appBackgroundImage = { backgroundImage: `url(${ Background })` };
+        navBarColor = { backgroundColor: "#ffffff10" };
+        footerTheme = { backgroundColor: "#482B47" };
         break;
       case "about":
-        appBackgroundImage = { backgroundImage: "none", backgroundColor: "#2D253A" }
+        appBackgroundImage = { backgroundImage: "none", backgroundColor: "#2D253A" };
+        navBarColor = { backgroundColor: "#3A3346" };
+        footerTheme = { backgroundColor: "#482B47" };
         break;
       case "resume":
-        appBackgroundImage = { backgroundImage: "none", backgroundColor: "#3D3350" }
+        appBackgroundImage = { backgroundImage: "none", backgroundColor: "#3D3350" };
+        navBarColor = { backgroundColor: "#49405B" };
+        footerTheme = { backgroundColor: "#482B47" };
         break;
-      /*case "home":
-        appBackgroundImage = { backgroundImage: url("./img/background-image.png") }
+      case "projects":
+        appBackgroundImage = { backgroundImage: "none", backgroundColor: "#2D324C" };
+        navBarColor = { backgroundColor: "#3A3F57" };
+        footerTheme = { backgroundColor: "#41466D" };
         break;
-      case "home":
-        appBackgroundImage = { backgroundImage: url("./img/background-image.png") }
-        break;*/
       default:
-        appBackgroundImage = { backgroundImage: `url(${ Background })` }
+        appBackgroundImage = { backgroundImage: `url(${ Background })` };
+        navBarColor = { backgroundColor: "#ffffff10" };
     }
 
     return (  
@@ -67,11 +74,11 @@ class App extends React.Component {
           active={ this.state.active }
           handleNavClick={ (key) => { this.handleClick(key) }}
           handleNavEnter={ (key) => { this.handleEnter(key) }}
+          navBarColor={ navBarColor }
         />
         <Switch>
           <Route exact path="/about"> <About /> </Route>
           <Route exact path="/resume"> <Resume /> </Route>
-          <Route exact path="/courses"> <Courses /> </Route>
           <Route exact path="/projects"> <Projects /> </Route>
           <Route exact path="/contact"> <Contact /> </Route>
           <Route exact path="/home"> <Home /> </Route>
@@ -79,10 +86,7 @@ class App extends React.Component {
         </Switch>
         { (window.location.pathname.substring(1) !== "home" && window.location.pathname !== "/") &&
           <Footer
-            hover={ this.state.hover }
-            active={ this.state.active }
-            handleNavClick={ (key) => { this.handleClick(key) }}
-            handleNavEnter={ (key) => { this.handleEnter(key) }}
+            footerTheme={ footerTheme }
           />
         }
       </div>
@@ -94,15 +98,15 @@ class App extends React.Component {
 class NavBar extends React.Component {
   render() {
     return (
-      <div className={ this.props.navBarTop ? "top-nav-bar" : "" }>
+      <div className={ this.props.navBarTop ? "top-nav-bar" : "" } style={ this.props.navBarColor }>
         <div className={ `container ${ this.props.navBarTop ? "top-nav-bar-container" : ""}` }>
           <div className="row">
             <div className="offset-3" />
-            {["home", "about", "resume", "courses", "projects", "contact"].map(key =>
+            {["home", "about", "resume", "projects", "contact"].map(key =>
               <LinkButton 
                 key={ key }
                 to={`/${ key }`}
-                className={`col-1 butn ${ key === this.props.hover ? 'hoverbtn' : '' }`}
+                className={`col butn ${ key === this.props.hover ? 'hoverbtn' : '' }`}
                 id={key === this.props.active ? 'selected' : '' }
                 onClick={() => this.props.handleNavClick(key)}
                 onMouseEnter={() => this.props.handleNavEnter(key)}
@@ -111,6 +115,7 @@ class NavBar extends React.Component {
               { key.charAt(0).toUpperCase() + key.substring(1) }
               </LinkButton>)
             }
+            <div className="offset-3" />
           </div>
         </div>
       </div>
@@ -121,14 +126,8 @@ class NavBar extends React.Component {
 class Footer extends React.Component {
   render() {
     return (
-      <div className="footer-container">
-        <NavBar 
-          hover={ this.props.hover }
-          active={ this.props.active } 
-          handleNavClick={ (key) => { this.props.handleNavClick(key) }} 
-          handleNavEnter={ (key) => { this.props.handleNavEnter(key) }}
-        />
-        <p align="center" className="footer-text">© 2020 Euntae Ki All rights reserved.</p>
+      <div className="footer-container" style={ this.props.footerTheme }>
+        <p align="center" className="footer-text"> © 2020 Euntae Ki All rights reserved. </p>
         <SocialMedia />
       </div>
 
