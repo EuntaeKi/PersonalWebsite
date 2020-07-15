@@ -36,26 +36,32 @@ class App extends React.Component {
     let appBackgroundImage;
     let navBarColor;
     let footerTheme;
+    let backgroundOverflow;
+
     switch(window.location.pathname.substring(1)) {
       case "home":
         appBackgroundImage = { backgroundImage: `url(${ Background })` };
         navBarColor = { backgroundColor: "#ffffff10" };
         footerTheme = { backgroundColor: "#482B47" };
+        backgroundOverflow = { overflow: "hidden" };
         break;
       case "about":
         appBackgroundImage = { backgroundImage: "none", backgroundColor: "#2D253A" };
         navBarColor = { backgroundColor: "#3A3346" };
         footerTheme = { backgroundColor: "#482B47" };
+        backgroundOverflow = { overflow: "overlay" };
         break;
       case "resume":
         appBackgroundImage = { backgroundImage: "none", backgroundColor: "#3D3350" };
         navBarColor = { backgroundColor: "#49405B" };
         footerTheme = { backgroundColor: "#482B47" };
+        backgroundOverflow = { overflow: "overlay" };
         break;
       case "projects":
         appBackgroundImage = { backgroundImage: "none", backgroundColor: "#2D324C" };
         navBarColor = { backgroundColor: "#3A3F57" };
         footerTheme = { backgroundColor: "#41466D" };
+        backgroundOverflow = { overflow: "overlay" };
         break;
       default:
         appBackgroundImage = { backgroundImage: `url(${ Background })` };
@@ -65,8 +71,8 @@ class App extends React.Component {
     return (  
     <React.Fragment>
       <div 
-        className={`app-background ${ window.location.pathname.substring(1) === "home" ? "app-background-hidden" : "app-background-overlay" }`}
-        style={ appBackgroundImage }
+        className="app-background"
+        style={{ ...appBackgroundImage, ...backgroundOverflow }}
       >
         <NavBar
           navBarTop={ this.state.active !== "home" }
