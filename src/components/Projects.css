@@ -14,22 +14,36 @@
 }
 
 .amazon-carry {
-    background-image: url('../img/Amazon_Carry_Background_BW.jpg');
-    background-position-y: -3rem;
-    border-radius: 0;
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('../img/Amazon_Carry_Background_BW.jpg');
+    background-repeat: no-repeat;
+}
+
+.arm-proc {
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('../img/ARM_Background_BW.jpg'); 
+}
+
+.doctor-fingertip {
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('../img/DAF_Background_BW_2.jpg');
+    background-repeat: no-repeat;
 }
 
 .project-btn {
     padding: 8rem 0;
-    color: #e6dbc3;
+    color: #FED0BB;
+    font-weight: bold;
     opacity: 0.65;
-    background-size: cover;
+    width: 100%;
+    height: 400px;
+    border-radius: 0;
+    background-size: 100%;
+    background-position: center;
     transition: all 0.3s ease-out;
+    
 }
 
 .project-btn:hover {
-    color: #fff8ea;
-    transform: scale(1.2);
+    color: #FCB9B2;
+    background-size: 110%;
     opacity: .8;
 }
 
