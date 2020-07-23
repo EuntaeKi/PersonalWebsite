@@ -10,7 +10,7 @@ class Resume extends React.Component {
     return (
       <React.Fragment>
         <Title titleText="Resume" />
-        <div className="content-container">
+        <div className="content-container container">
           <ResumeCell heading="Education" parsedItems={ ResJSON.education } itemType="education" />
           <ResumeCell heading="Projects" parsedItems={ ResJSON.projects } itemType="projects" />
           <ResumeCell heading="Work Experience" parsedItems={ ResJSON.workExperience } itemType="workExperience" />

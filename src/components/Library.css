@@ -1,12 +1,12 @@
 .content-container {
     border: 1px solid #838383;
     width: 80%;
-    margin-left: 10%;
+    align-self: center;
     margin-top: 3rem;
     padding: 2rem 5rem 2rem 5rem;
     color: #EEEEEE;
     align-content: center;
-    margin-bottom: 4rem;
+    margin: 3rem auto 0 auto;
 }
 
 .vertical-border {

@@ -30,10 +30,8 @@ class Title extends React.Component {
             this.setState({ 
                 stringHolder: this.state.stringHolder + this.props.titleText.charAt(this.state.stringPos),
                 stringPos: this.state.stringPos + 1,
-                // timerLatency: Math.floor(Math.random() * 500 + 100),
             });
         }
-        // setTimeout(this.updateTitle, this.state.timerLatency)
     }
 
     componentDidMount() {
