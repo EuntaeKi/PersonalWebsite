@@ -1,5 +1,7 @@
 import React from 'react';
 import Title from './Title';
+//import ProjJSON from './Projects.json';
+import { exData } from './ProjectsData';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Projects.css';
 import './Library.css';
@@ -10,23 +12,24 @@ class Projects extends React.Component {
     this.state = { 
       overlay: false,
       project: "",
-      page: 0
+      page: 0,
+      pageEnd: ""
     }
     this.handleClick = this.handleClick.bind(this);
     this.handleOverlayClick = this.handleOverlayClick.bind(this);
   }
 
   handleOverlayClick(e) {
-    /*** Testing code - Needs to be removed when finished ***/
-    console.log(e.target.getAttribute("value"));
     if (e.target.getAttribute("value") === "right-arrow") {
-      console.log("Right Arrow Clicked!");
+      this.setState({ page: this.state.page + 1 })
     } else if (e.target.getAttribute("value") === "left-arrow") {
-      console.log("Left Arrow Clicked!");
-    } else if (e.target.getAttribute("value") !== "content") {
+      this.setState({ page: this.state.page - 1 })
+    } else if (e.target.getAttribute("value") === "container") {
       this.setState({
         project: "",
-        overlay: false
+        overlay: false,
+        page: 0,
+        pageEnd: ""
       });
     }
   }
@@ -34,7 +37,8 @@ class Projects extends React.Component {
   handleClick(e) {
     this.setState({ 
       overlay: true,
-      project: e.target.value
+      project: e.currentTarget.value,
+      pageEnd: (exData[e.currentTarget.value].header).length - 1,
      });
   }
 
@@ -42,13 +46,13 @@ class Projects extends React.Component {
     let overlayVar;
 
     switch(this.state.project) {
-      case "amazon-carry":
+      case "amazonCarry":
         overlayVar = "Amazon carry"
         break;
-      case "arm-proc":
+      case "armProcessor":
         overlayVar = "ARM Processor"
         break;
-      case "doctor-fingertip":
+      case "doctorFingertip":
         overlayVar = "Doctor at Your Fingertip"
         break;
       default:
@@ -59,20 +63,20 @@ class Projects extends React.Component {
         <div 
           className="overlay"
           style={ this.state.project ? { display: "block" } : { display: "none" }}
-          onClick={ this.handleOverlayClick }
           value="container" >
-          <div className="overlay-content-row">
-            <button className="arrow-wrapper" id="left-arrow-wrapper" value="left-arrow">
-              <div className="arrow" value="left-arrow" />
-            </button>
-            <div className="overlay-content content-container" value="content">
-              <div className="overlay-heading">
-                { overlayVar }
-              </div>
-            </div>
-            <button className="arrow-wrapper" id="right-arrow-wrapper" value="right-arrow">
-              <div className="arrow" value="right-arrow" style={{ transform: "rotate(225deg)" }} />
-            </button>
+          <div className="overlay-content-row" value="container" onClick={ (e) => this.handleOverlayClick(e) }>
+            { this.state.page !== 0 ? 
+              <button className="arrow-wrapper" id="left-arrow-wrapper" value="left-arrow">
+                <div className="arrow" value="left-arrow" />
+              </button> : <div className="arrow-dummy" /> }
+            <ProjectLayout 
+              value="content"
+              page={ this.state.page }
+              project={ this.state.project } />
+              { this.state.page !== this.state.pageEnd ? 
+              <button className="arrow-wrapper" id="right-arrow-wrapper" value="right-arrow">
+                <div className="arrow" value="right-arrow" style={{ transform: "rotate(225deg)" }} />
+              </button> : <div className="arrow-dummy" /> }
           </div>
         </div>
         <div>
@@ -99,13 +103,13 @@ class ProjectButton extends React.Component {
   componentDidMount() {
     switch (this.props.btnDesc) {
       case "Amazon Carry":
-        this.setState({btnType: "amazon-carry"});
+        this.setState({btnType: "amazonCarry"});
         break;
       case "Doctor at Your Fingertip":
-        this.setState({btnType: "doctor-fingertip"});
+        this.setState({btnType: "doctorFingertip"});
         break;
       case "ARM-based Processor":
-        this.setState({btnType: "arm-proc"});
+        this.setState({btnType: "armProcessor"});
         break;
       default:
         this.setState({btnType: ""});
@@ -121,12 +125,37 @@ class ProjectButton extends React.Component {
             onClick={ (e) => this.props.handleClick(e) }
             style={ this.props.edgeCheck ? { } : { borderRight: "1px solid #838383" }}
             value={ this.state.btnType } >
-            <p className="project-btn-text">{ this.props.btnDesc }</p>
+            <p className="project-btn-text">
+              { this.props.btnDesc }
+            </p>
           </button>
         </div>
       </div>
     );
   }
+}
+
+function ProjectLayout(props) {  
+  //  props.project ? ProjJSON[props.project].image[props.page] : "" 
+  return (
+    <div className="row" style={{ width: "85%", margin: 0, color: "#F5F5DC" }}>
+      <div
+        className="overlay-content-half col-6">
+        <h2 className="overlay-header"> { props.project ? exData[props.project].header[props.page] : "" } </h2>
+        <div className="heading-bar" style={{ borderColor: "#F5F5DC", margin: "1rem 0" }} />
+        <p>{ props.project ? exData[props.project].content[props.page] : "" }</p>
+      </div>
+      <div
+        className="overlay-content-half col-6"
+        value="content"
+        style={{ backgroundColor: "#604C88", borderColor: "#604C88" }}>
+          <img
+            src={ props.project ? exData[props.project].image[props.page] : "" }
+            alt={ props.project ? exData[props.project].imageAlt[props.page] : "" }
+            className="overlay-content-image" />
+      </div>
+    </div>
+  );
 }
 
 export default Projects;

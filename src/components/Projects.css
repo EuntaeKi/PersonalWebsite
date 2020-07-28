@@ -78,16 +78,6 @@
     z-index: 10;
 }
 
-.overlay-content {
-    background-color: #99A18F;
-    margin: 3rem 0 2rem 0;
-    padding: 2rem 3rem;
-    border: 1px solid #99A18F;
-    font-family: 'Segoe UI';
-    box-shadow: 5px 5px #cbdbb7;
-    height: 85%;
-}
-
 .overlay-heading {
     font-size: 2rem;
 }
@@ -117,6 +107,13 @@
     margin: 0 auto;
 }
 
+.arrow-dummy {
+    display: flex;
+    width: 3rem;
+    height: 0;
+    margin: 0 auto;
+}
+
 #right-arrow-wrapper:hover {
     transition: transform ease-in 0.3s;
     -webkit-transform: translateX(4px);
@@ -131,4 +128,18 @@
     -moz-transform: translateX(-4px);
     -ms-transform: translateX(-4px);
     transform: translateX(-4px);
+}
+
+.overlay-content-half {
+    background-color: #544475;
+    margin: 5rem 0rem 2rem 0rem;
+    padding: 2rem 3rem;
+    border: 1px solid #544475;
+    font-family: 'Segoe UI';
+    height: 85%;
+}
+
+.overlay-content-image {
+    height: 100%;
+    margin: 0 auto;
 }

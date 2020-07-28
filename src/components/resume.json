@@ -11,7 +11,7 @@
             "subheading": "Amazon Carry", 
             "subtext": "Embedded System Capstone | Jan 2020 - Mar 2020", 
             "text": [ 
-                "Designed a shopping cart which can detect a user and follow them using VCSEL sensor and machine learning-based edge detection",
+                "Designed a shopping cart which detects a user and follow them using VCSEL sensor and machine learning-based edge detection",
                 "Developed a web server with Node.js on Raspberry Pi to establish bidirectional communication between the device and the user",
                 "Designed a React based web page to remotely control and customize settings",
                 "Established data transfer between the web server and the Raspberry Pi's main Python script"
