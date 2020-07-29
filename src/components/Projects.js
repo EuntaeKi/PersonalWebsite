@@ -46,13 +46,13 @@ class Projects extends React.Component {
     let overlayVar;
 
     switch(this.state.project) {
-      case "amazonCarry":
+      case "amazon-carry":
         overlayVar = "Amazon carry"
         break;
-      case "armProcessor":
+      case "arm-processor":
         overlayVar = "ARM Processor"
         break;
-      case "doctorFingertip":
+      case "doctor-fingertip":
         overlayVar = "Doctor at Your Fingertip"
         break;
       default:
@@ -103,13 +103,13 @@ class ProjectButton extends React.Component {
   componentDidMount() {
     switch (this.props.btnDesc) {
       case "Amazon Carry":
-        this.setState({btnType: "amazonCarry"});
+        this.setState({btnType: "amazon-carry"});
         break;
       case "Doctor at Your Fingertip":
-        this.setState({btnType: "doctorFingertip"});
+        this.setState({btnType: "doctor-fingertip"});
         break;
       case "ARM-based Processor":
-        this.setState({btnType: "armProcessor"});
+        this.setState({btnType: "arm-processor"});
         break;
       default:
         this.setState({btnType: ""});
