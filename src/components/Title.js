@@ -39,7 +39,7 @@ class Title extends React.Component {
             () => this.changeCursor(), 500
         );
         this.stringTimerID = setInterval(
-            () => this.updateTitle(), 250
+            () => this.updateTitle(), 125
         );
     }
 
@@ -49,13 +49,13 @@ class Title extends React.Component {
     }
 
     render() {
-        let headingColor = this.props.headingColor !== undefined ? { color: this.props.headingColor } : { color: "#eeeeee" };
+        
         return (
             <div className="container">
-                <div className="row">
-                    <h1 style={ headingColor }> { this.state.stringHolder } </h1>
+                <div className="row" style={ this.props.center || false ? {margin: "0 auto"} : {} }>
+                    <h1 style={ this.props.center !== undefined ? { color: "#eeeeee", margin: "0 0 0 auto" } : { color: "#eeeeee" } }> { this.state.stringHolder } </h1>
                     { this.state.charNbsp ? <div><span>&nbsp;&nbsp;</span><span>&nbsp;</span></div> : ''}
-                    <div className={ this.state.cursor ? "cursor-line" : "cursor-line-transparent" } />
+                    <div className={ this.state.cursor ? "cursor-line" : "cursor-line-transparent" } style={ this.props.center || false ? { margin: "0 auto 0 0" } : {} } />
                 </div>
             </div>
         );

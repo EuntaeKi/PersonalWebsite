@@ -1,7 +1,29 @@
-.about-text {
-    font-size: 3rem;
+.about-text:first-letter {
+    font-size: 1.5rem;
 }
 
-.about-photo-box {
-    align-items: center;
+.about-text {
+    font-size: 1.25rem; font-family: "Segoe UI";
 }
+
+.about-others-text {
+    position: relative;
+    text-align: center;
+    margin: 0 auto;
+}
+/*.about-others-text::before {
+    position: absolute;
+    left: -3rem;
+    top: 50%;
+    width: 2rem;
+    border-bottom: 1px solid #eeeeee;
+    content: "";
+}
+.about-others-text::after {
+    position: absolute;
+    right: -5rem;
+    top: 50%;
+    width: 4rem;
+    border-bottom: 1px solid #eeeeee;
+    content: "";
+}*/

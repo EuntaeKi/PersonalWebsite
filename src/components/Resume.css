@@ -37,6 +37,27 @@
     padding-left: 3rem;
 }
 
-h2 {
-    font-size: 2.5rem;
+.table {
+    width: 100%;
+}
+
+.tright {
+    text-align: right;
+}
+
+#tmiddle {
+    border-right: 1px solid #eeeeee;
+}
+
+.table th {
+    color: #eeeeee;
+    border: none;
+    width: 10%;
+    padding: 0.25rem 1rem;
+    font-weight: 400;
+}
+
+
+.table-container {
+    margin-bottom: 2.5rem;
 }

@@ -19,6 +19,10 @@ class Projects extends React.Component {
     this.handleOverlayClick = this.handleOverlayClick.bind(this);
   }
 
+  componentDidMount() {
+    window.scrollTo(0,0);
+  }
+
   handleOverlayClick(e) {
     if (e.target.getAttribute("value") === "right-arrow") {
       this.setState({ page: this.state.page + 1 })
@@ -31,6 +35,7 @@ class Projects extends React.Component {
         page: 0,
         pageEnd: ""
       });
+      document.body.style = 'overflow-y: auto;';
     }
   }
 
@@ -40,24 +45,10 @@ class Projects extends React.Component {
       project: e.currentTarget.value,
       pageEnd: (exData[e.currentTarget.value].header).length - 1,
      });
+    document.body.style = 'overflow-y: hidden;';
   }
 
   render() {
-    let overlayVar;
-
-    switch(this.state.project) {
-      case "amazon-carry":
-        overlayVar = "Amazon carry"
-        break;
-      case "arm-processor":
-        overlayVar = "ARM Processor"
-        break;
-      case "doctor-fingertip":
-        overlayVar = "Doctor at Your Fingertip"
-        break;
-      default:
-    }
-
     return (
       <div className="project-container" value="container">
         <div 
@@ -135,15 +126,22 @@ class ProjectButton extends React.Component {
   }
 }
 
-function ProjectLayout(props) {  
-  //  props.project ? ProjJSON[props.project].image[props.page] : "" 
+function ProjectLayout(props) {
+  var projectList = [];
+  if ( props.project) {
+    for (var i = 0; i < exData[props.project].content[props.page].length; i++) {
+      projectList.push(<li key={i}> { exData[props.project]["content"][props.page][i] } </li>);
+    }
+  }
   return (
     <div className="row" style={{ width: "85%", margin: 0, color: "#F5F5DC" }}>
       <div
         className="overlay-content-half col-6">
         <h2 className="overlay-header"> { props.project ? exData[props.project].header[props.page] : "" } </h2>
         <div className="heading-bar" style={{ borderColor: "#F5F5DC", margin: "1rem 0" }} />
-        <p>{ props.project ? exData[props.project].content[props.page] : "" }</p>
+        <ul>
+          { projectList }
+        </ul>
       </div>
       <div
         className="overlay-content-half col-6"

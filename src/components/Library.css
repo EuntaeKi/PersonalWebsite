@@ -1,12 +1,10 @@
 .content-container {
     border: 1px solid #838383;
     width: 80%;
-    align-self: center;
     margin-top: 3rem;
-    padding: 2rem 5rem 2rem 5rem;
+    padding: 4rem 5rem;
     color: #EEEEEE;
-    align-content: center;
-    margin: 3rem auto 0 auto;
+    margin: 3rem auto 6rem auto;
 }
 
 .vertical-border {
@@ -14,11 +12,23 @@
 }
 
 .heading-bar {
-    border-bottom: 0.5rem solid #7EACBD;
     width: 3rem;
+    margin-bottom: 1rem;
+    border-bottom: 0.5rem solid #7EACBD;
     border-bottom-right-radius: 0.75rem;
-    margin-top: 0.5rem;
 }
+
+.emphasis {
+    font-size: 1.5rem;
+    font-family: "OCR-A";
+    color: #7EACBD
+}
+
+h1 { font-size: 6rem; margin-bottom: 0; }
+
+h2 { font-size: 3rem; }
+
+p { font-size: 1.5rem; font-family: "Segoe UI"; }
 
 @font-face {
     font-family: 'OCR-A';

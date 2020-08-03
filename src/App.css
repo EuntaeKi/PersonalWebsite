@@ -1,17 +1,20 @@
 .app-background {
   width: 100%;
-  height: 100vh;
   background-size: cover;
+  padding: 3rem 0 1px 0;
 }
+
+html { height: 100vh; overflow-y:auto; overflow-x: hidden }
+body { height: 100vh; }
 
 .top-nav-bar {
   max-width: 100vw;
   width: 100vw;
-  background-color: #ffffff10;
-  margin-bottom: 3rem;
-  position: sticky;
+  margin: 0;
+  position: fixed;
   top: 0;
   z-index: 1;
+  color: #ffffff00;
 }
 
 .top-nav-bar-container {
@@ -56,10 +59,19 @@
   align-content: center;
   text-align: center;
   padding: 2rem 0 2rem 0;
-  margin-top: 4rem;
+  border-top: 2px solid #eeeeee;
 }
 
 .footer-text {
   font-size: 0.75rem;
-  margin-bottom: 0.8rem;
+  margin-bottom: 0;
+}
+
+#footer-hr {
+  width: 7rem;
+  background-color: #eeeeee;
+  height: 0.2rem;
+  margin: 0.5rem auto;
+  border-bottom-left-radius: 0.25rem;
+  border-bottom-right-radius: 0.25rem;
 }
