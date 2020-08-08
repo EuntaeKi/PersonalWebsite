@@ -3,7 +3,6 @@ import { Route, Switch, Redirect, BrowserRouter } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
 import { withRouter } from "react-router-dom";
-import { faCircle } from '@fortawesome/free-solid-svg-icons';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
@@ -24,9 +23,9 @@ class ScrollToTop extends React.Component {
       this.props.location.pathname !== prevProps.location.pathname
     ) {
       window.scrollTo(0, 0);
-      console.log("ScrollToTop Executed")
+      console.log("ScrollToTop Executed");
     } else {
-      console.log("ScrollToTop Was Called")
+      console.log("ScrollToTop Was Called");
     }
   }
 
@@ -98,7 +97,9 @@ class App extends React.Component {
         />
         <div
           className="app-background"
-          style={ window.location.pathname.substring(1) !== "home" ? { ...appBackgroundImage, ...backgroundOverflow } : { ...appBackgroundImage, ...backgroundOverflow, ...homeHeight }} >
+          style={ window.location.pathname.substring(1) !== "home" ?
+            { ...appBackgroundImage, ...backgroundOverflow } : 
+            { ...appBackgroundImage, ...backgroundOverflow, ...homeHeight }} >
           <Switch>
             <Route exact path="/about">
               <About />
@@ -117,7 +118,9 @@ class App extends React.Component {
         </div>
         {(window.location.pathname.substring(1) !== "home" && window.location.pathname !== "/") &&
           <Footer
-            footerTheme={ window.location.pathname.substring(1) === "projects" ? { backgroundColor: "#41466D" } : { backgroundColor: "#482B47" } }
+            footerTheme={ window.location.pathname.substring(1) === "projects" ?
+            { backgroundColor: "#41466D" } : 
+            { backgroundColor: "#482B47" } }
           />
         }
       </BrowserRouter>
@@ -161,7 +164,9 @@ class Footer extends React.Component {
         <SocialMedia />
         <hr id="footer-hr" />
         <div className="row" style={{ margin: "0 0 0.125rem 0" }}>
-          <FontAwesomeIcon style={{ fontSize: "1.25rem", margin: "0 0.25rem 0 auto" }} icon={ faEnvelope } size="2x" transform="shrink-4 up-1" />
+          <FontAwesomeIcon
+            style={{ fontSize: "1.25rem", margin: "0 0.25rem 0 auto" }}
+            icon={ faEnvelope } size="2x" transform="shrink-4 up-1" />
           <p className="footer-text">|</p>
           <p className="footer-text" style={{ margin: "0 auto 0 0.25rem" }}>euntaeki@outlook.com</p>
         </div>

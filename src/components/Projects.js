@@ -1,6 +1,5 @@
 import React from 'react';
 import Title from './Title';
-//import ProjJSON from './Projects.json';
 import { exData } from './ProjectsData';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Projects.css';
@@ -16,11 +15,8 @@ class Projects extends React.Component {
       pageEnd: ""
     }
     this.handleClick = this.handleClick.bind(this);
+    this.handleKeyDown = this.handleKeyDown.bind(this);
     this.handleOverlayClick = this.handleOverlayClick.bind(this);
-  }
-
-  componentDidMount() {
-    window.scrollTo(0,0);
   }
 
   handleOverlayClick(e) {
@@ -29,13 +25,20 @@ class Projects extends React.Component {
     } else if (e.target.getAttribute("value") === "left-arrow") {
       this.setState({ page: this.state.page - 1 })
     } else if (e.target.getAttribute("value") === "container") {
-      this.setState({
-        project: "",
-        overlay: false,
-        page: 0,
-        pageEnd: ""
-      });
-      document.body.style = 'overflow-y: auto;';
+      this.setState({ project: "", overlay: false, page: 0, pageEnd: "" });
+      document.body.style = 'overflow-y: none;';
+    }
+  }
+
+  handleKeyDown(e) {
+    console.log("KeyCode: " + e.keyCode);
+    if (this.state.overlay && e.keyCode === 27) {
+      this.setState({ overlay: false, page: 0, pageEnd:"", project: "" });
+      document.body.style = 'overflow-y: none;';
+    } else if (this.state.overlay && e.keyCode === 39 && this.state.pageEnd !== this.state.page) {
+      this.setState({ page: this.state.page + 1 });
+    } else if (this.state.overlay && e.keyCode === 37 && this.state.page !== 0) {
+      this.setState({ page: this.state.page - 1 });
     }
   }
 
@@ -50,20 +53,17 @@ class Projects extends React.Component {
 
   render() {
     return (
-      <div className="project-container" value="container">
-        <div 
-          className="overlay"
-          style={ this.state.project ? { display: "block" } : { display: "none" }}
-          value="container" >
-          <div className="overlay-content-row" value="container" onClick={ (e) => this.handleOverlayClick(e) }>
+      <div className="project-container" tabIndex="0" value="container"
+        onKeyDown={ (e) => this.handleKeyDown(e) } >
+        <div className="overlay" value="container" 
+          style={ this.state.project ? { display: "block" } : { display: "none" }} >
+          <div className="overlay-content-row" value="container" 
+            onClick={ (e) => this.handleOverlayClick(e) }>
             { this.state.page !== 0 ? 
               <button className="arrow-wrapper" id="left-arrow-wrapper" value="left-arrow">
                 <div className="arrow" value="left-arrow" />
               </button> : <div className="arrow-dummy" /> }
-            <ProjectLayout 
-              value="content"
-              page={ this.state.page }
-              project={ this.state.project } />
+            <ProjectLayout value="content" page={ this.state.page } project={ this.state.project } />
               { this.state.page !== this.state.pageEnd ? 
               <button className="arrow-wrapper" id="right-arrow-wrapper" value="right-arrow">
                 <div className="arrow" value="right-arrow" style={{ transform: "rotate(225deg)" }} />
@@ -73,10 +73,17 @@ class Projects extends React.Component {
         <div>
           <Title titleText="Projects" />
           <div className="content-container container" id="project-content">
-            <div className="row">
-              <ProjectButton handleClick={ this.handleClick } btnDesc="Amazon Carry" edgeCheck={ false } />
-              <ProjectButton handleClick={ this.handleClick } btnDesc="ARM-based Processor" edgeCheck={ false } />
-              <ProjectButton handleClick={ this.handleClick } btnDesc="Doctor at Your Fingertip" edgeCheck={ true } />
+            <div className="row" style={{ marginTop: "4rem" }}>
+              <div className="offset-2" />
+              <ProjectButton handleClick={ this.handleClick } btnDesc="Amazon Carry" />
+              <ProjectButton handleClick={ this.handleClick } btnDesc="ARM-based Processor" />
+              <div className="offset-2" />
+            </div>
+            <div className="row" style={{ marginBottom: "4rem" }}>
+              <div className="offset-2" />
+              <ProjectButton handleClick={ this.handleClick } btnDesc="Doctor at Your Fingertip" />
+              <ProjectButton handleClick={ this.handleClick } btnDesc="Personal Website" />
+              <div className="offset-2" />
             </div>
           </div>
         </div>
@@ -86,36 +93,36 @@ class Projects extends React.Component {
 }
 
 class ProjectButton extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { btnType: "" };
-  }
+  render() {
+    let btnType = "";
+    let marginType = { border: "1px solid #ffffff00" };
 
-  componentDidMount() {
     switch (this.props.btnDesc) {
       case "Amazon Carry":
-        this.setState({btnType: "amazon-carry"});
+        btnType = "amazon-carry";
+        marginType = { borderRight: "1px solid #eeeeee", borderBottom: "1px solid #eeeeee", marginRight: "-1px", marginBottom: "-1px" };
         break;
       case "Doctor at Your Fingertip":
-        this.setState({btnType: "doctor-fingertip"});
+        btnType = "doctor-fingertip";
         break;
       case "ARM-based Processor":
-        this.setState({btnType: "arm-processor"});
+        btnType = "arm-processor";
+        break;
+      case "Personal Website":
+        btnType = "personal-website";
+        marginType = { borderLeft: "1px solid #eeeeee", borderTop: "1px solid #eeeeee", marginLeft: "-1px", marginTop: "-1px" };
         break;
       default:
-        this.setState({btnType: ""});
+
     }
-  }
-  
-  render() {
     return (
       <div className="col-4" style={{ padding: 0 }}>
         <div className="btn-container">
           <button 
-            className={`btn project-btn ${ this.state.btnType } `} 
+            className={`btn project-btn ${ btnType } `} 
             onClick={ (e) => this.props.handleClick(e) }
-            style={ this.props.edgeCheck ? { } : { borderRight: "1px solid #838383" }}
-            value={ this.state.btnType } >
+            style={ marginType }
+            value={ btnType } >
             <p className="project-btn-text">
               { this.props.btnDesc }
             </p>
@@ -128,7 +135,7 @@ class ProjectButton extends React.Component {
 
 function ProjectLayout(props) {
   var projectList = [];
-  if ( props.project) {
+  if (props.project) {
     for (var i = 0; i < exData[props.project].content[props.page].length; i++) {
       projectList.push(<li key={i}> { exData[props.project]["content"][props.page][i] } </li>);
     }
@@ -137,20 +144,29 @@ function ProjectLayout(props) {
     <div className="row" style={{ width: "85%", margin: 0, color: "#F5F5DC" }}>
       <div
         className="overlay-content-half col-6">
-        <h2 className="overlay-header"> { props.project ? exData[props.project].header[props.page] : "" } </h2>
+        <h2 className="overlay-header">
+          { props.project ? exData[props.project].header[props.page] : "" }
+        </h2>
         <div className="heading-bar" style={{ borderColor: "#F5F5DC", margin: "1rem 0" }} />
-        <ul>
+        <ul className="overlay-content-text">
           { projectList }
         </ul>
       </div>
       <div
         className="overlay-content-half col-6"
         value="content"
-        style={{ backgroundColor: "#604C88", borderColor: "#604C88" }}>
+        style={ (props.project && exData[props.project].image[props.page] === "") ? 
+          { backgroundColor: "#544475", borderColor: "#544475" } : 
+          { backgroundColor: "#604C88", borderColor: "#604C88" }}>
           <img
             src={ props.project ? exData[props.project].image[props.page] : "" }
             alt={ props.project ? exData[props.project].imageAlt[props.page] : "" }
             className="overlay-content-image" />
+            <p
+              className="overlay-content-text"
+              style={{ margin: "1rem auto 0 auto", textAlign: "center" }}> 
+              { props.project ? exData[props.project].imageCaption[props.page] : "" } 
+            </p>
       </div>
     </div>
   );
