@@ -2,6 +2,7 @@
     border-right: 1px solid #838383;
     text-align: right;
     padding-right: 2rem;
+    letter-spacing: -0.25rem;
 }
 
 .resume-cell-content {
@@ -11,7 +12,9 @@
 
 .resume-cell-subheader {
     font-weight: bold;
-    font-size: 1.75rem;
+    font-size: 1.5rem;
+    letter-spacing: 0.5px;
+    margin-top: 0.75rem;
 }
 
 .resume-cell-subtext {
@@ -23,6 +26,8 @@
 .resume-cell-text {
     flex-wrap: wrap;
     display: flex;
+    line-height: normal;
+    margin-bottom: 0.125rem;
 }
 
 .resume-cell-text-container {

@@ -23,9 +23,6 @@ class ScrollToTop extends React.Component {
       this.props.location.pathname !== prevProps.location.pathname
     ) {
       window.scrollTo(0, 0);
-      console.log("ScrollToTop Executed");
-    } else {
-      console.log("ScrollToTop Was Called");
     }
   }
 
@@ -69,16 +66,16 @@ class App extends React.Component {
         homeHeight = { height: "100vh" };
         break;
       case "about":
-        appBackgroundImage = { backgroundImage: "none", backgroundColor: "#2D253A" };
+        appBackgroundImage = { backgroundColor: "#2D253A" };
         navBarColor = { backgroundColor: "#3A3346" };
         backgroundOverflow = { overflow: "overlay" };
         break;
       case "resume":
-        appBackgroundImage = { backgroundImage: "none", backgroundColor: "#3D3350" };
+        appBackgroundImage = { backgroundColor: "#3D3350" };
         navBarColor = { backgroundColor: "#49405B" };
         break;
       case "projects":
-        appBackgroundImage = { backgroundImage: "none", backgroundColor: "#2D324C" };
+        appBackgroundImage = { backgroundColor: "#2D324C" };
         navBarColor = { backgroundColor: "#3A3F57" };
         backgroundOverflow = { overflow: "overlay" };
         break;

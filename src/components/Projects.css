@@ -21,33 +21,38 @@
 
 .personal-website {
     background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('../img/Personal_Website.png');
-    background-size: 200%;
+    background-size: 225%;
     background-position: center;
-    background-position-x: -2rem;
 }
 
 .personal-website:hover {
-    background-size: 220%;
+    background-size: 250%;
 }
 
 /*** Project Button Styles ***/
+.project-btn-container:focus {
+    border: none;
+    outline: none;
+}
+
 .project-btn {
-    padding: 8rem 0;
     color: #FED0BB;
-    font-weight: bold;
+    font-weight: normal;
     opacity: 0.65;
     width: 100%;
     height: 350px;
     border-radius: 0;
+    border: 1px solid #838383;
     background-size: 130%;
     filter: grayscale();
-    transition: all 0.3s ease-out;    
+    transition: all 0.2s ease-out;
 }
 
 .project-btn:hover {
     color: #e6897e;
     background-size: 145%;
     opacity: .8;
+    border: 1px solid #cecf97;
     filter: none;
 }
 
@@ -60,6 +65,7 @@
     font-size: 2.5rem;
     font-family: 'Segoe UI';
     font-weight: bold;
+    margin-bottom: 0;
 }
 
 /*** Overlay Styles ***/
@@ -82,6 +88,9 @@
 
 .overlay-content-header {
     margin-bottom: 0;
+    font-size: 2.5rem;
+    font-weight: bold;
+    letter-spacing: 1px;
 }
 
 .overlay-content-list {
@@ -119,7 +128,6 @@
 .overlay-content-caption {
     font-size: 1rem;
     text-align: center;
-    margin-top: 1rem;
     margin-bottom: auto;
 }
 

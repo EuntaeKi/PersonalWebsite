@@ -11,6 +11,10 @@ import './Library.css';
 
 
 class Resume extends React.Component {
+  componentDidMount() {
+    document.title = "EK | Resume";
+  }
+
   render() {
     return (
       <React.Fragment>
@@ -30,7 +34,7 @@ class Resume extends React.Component {
                   <table className="table" style={{ textAlign: "left", margin: "0 auto 0 0" }}>
                     <tbody>
                       <tr>
-                        <th>Javascript</th>
+                        <th>React.js</th>
                         <th className="tright" id="tmiddle">
                           <SkillLevel filled={ 4 } />
                         </th>
@@ -53,13 +57,23 @@ class Resume extends React.Component {
                         <th>CSS3</th>
                         <th className="tright" id="tmiddle">
                           <SkillLevel filled={ 4 } /></th>
-                        <th>SQL</th>
+                        <th>Node.js</th>
                         <th className="tright">
                           <SkillLevel filled={ 3 } />
                         </th>
                       </tr>
                       <tr>
                         <th>Java</th>
+                        <th className="tright" id="tmiddle">
+                          <SkillLevel filled={ 3 } />
+                        </th>
+                        <th>SQL</th>
+                        <th className="tright">
+                          <SkillLevel filled={ 3 } />
+                        </th>
+                      </tr>
+                      <tr>
+                        <th>SystemVerilog</th>
                         <th className="tright" id="tmiddle">
                           <SkillLevel filled={ 3 } />
                         </th>

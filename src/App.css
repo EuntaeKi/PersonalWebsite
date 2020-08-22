@@ -4,7 +4,7 @@
   padding: 3rem 0 1px 0;
 }
 
-html { height: 100vh; overflow-y:auto; overflow-x: hidden }
+html { height: 100vh; overflow-y:auto; overflow-x: hidden; background-image: url('./img/background-image.png') }
 body { height: 100vh; }
 
 .top-nav-bar {
@@ -58,8 +58,8 @@ body { height: 100vh; }
   background-color: #41466D;
   align-content: center;
   text-align: center;
-  padding: 2rem 0 2rem 0;
-  border-top: 2px solid #eeeeee;
+  padding: 2.5rem 0;
+  border-top: 2px solid #cccccc;
 }
 
 .footer-text {

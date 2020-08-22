@@ -11,6 +11,14 @@
     border-right: 1px solid #838383;
 }
 
+.seperator {
+    width: "25%";
+    background-color: "#eeeeee";
+    height: "0.25rem";
+    border:"none";
+    margin: "3rem auto 3rem auto";
+}
+
 .heading-bar {
     width: 3rem;
     margin-bottom: 1rem;

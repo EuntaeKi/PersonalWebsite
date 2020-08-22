@@ -27,6 +27,7 @@ class Projects extends React.Component {
     } else if (e.target.getAttribute("value") === "container") {
       this.setState({ project: "", overlay: false, page: 0, pageEnd: "" });
       document.body.style = "overflow-y: none;";
+      document.title = "EK | Projects";
     }
   }
 
@@ -35,6 +36,7 @@ class Projects extends React.Component {
     if (this.state.overlay && e.keyCode === 27) {
       this.setState({ overlay: false, page: 0, pageEnd: "", project: "" });
       document.body.style = "overflow-y: none;";
+      document.title = "EK | Projects";
     } else if (
       this.state.overlay &&
       e.keyCode === 39 &&
@@ -50,6 +52,10 @@ class Projects extends React.Component {
     }
   }
 
+  componentDidMount() {
+    document.title = "EK | Projects";
+  }
+
   handleClick(e) {
     this.setState({
       overlay: true,
@@ -57,12 +63,29 @@ class Projects extends React.Component {
       pageEnd: exData[e.currentTarget.value].length - 1,
     });
     document.body.style = "overflow-y: hidden;";
+    let projectText;
+    switch(e.currentTarget.value) {
+      case "amazon-carry":
+        projectText = "Amazon Carry";
+        break;
+      case "arm-processor":
+        projectText = "ARM Processor";
+        break;
+      case "doctor-fingertip":
+        projectText = "Doctor at Your Fingertip";
+        break;
+      case "personal-website":
+        projectText = "Personal Website";
+        break;
+      default:
+    }
+    document.title = "EK | " + projectText;
   }
 
   render() {
     return (
       <div
-        className="project-container"
+        className="project-container project-btn-container"
         tabIndex="0"
         value="container"
         onKeyDown={(e) => this.handleKeyDown(e)}
@@ -112,18 +135,18 @@ class Projects extends React.Component {
             )}
           </div>
         </div>
-        <div>
+        <div className="project-btn-container">
           <Title titleText="Projects" />
           <div className="content-container container" id="project-content">
             <div className="row" style={{ marginTop: "4rem" }}>
               <div className="offset-2" />
               <ProjectButton
                 handleClick={this.handleClick}
-                btnDesc="Amazon Carry"
+                btnDesc="Amazon\nCarry"
               />
               <ProjectButton
                 handleClick={this.handleClick}
-                btnDesc="ARM-based Processor"
+                btnDesc="ARM-based\nProcessor"
               />
               <div className="offset-2" />
             </div>
@@ -131,11 +154,11 @@ class Projects extends React.Component {
               <div className="offset-2" />
               <ProjectButton
                 handleClick={this.handleClick}
-                btnDesc="Doctor at Your Fingertip"
+                btnDesc="Doctor at\nYour Fingertip"
               />
               <ProjectButton
                 handleClick={this.handleClick}
-                btnDesc="Personal Website"
+                btnDesc="Personal\nWebsite"
               />
               <div className="offset-2" />
             </div>
@@ -149,32 +172,22 @@ class Projects extends React.Component {
 class ProjectButton extends React.Component {
   render() {
     let btnType = "";
-    let marginType = { border: "1px solid #ffffff00" };
+    let newBtnDesc = this.props.btnDesc.split('\\n').map((item, i) => {
+      return <p className="project-btn-text" key={i}>{item}<br /></p>
+    })
 
     switch (this.props.btnDesc) {
-      case "Amazon Carry":
+      case "Amazon\\nCarry":
         btnType = "amazon-carry";
-        marginType = {
-          borderRight: "1px solid #eeeeee",
-          borderBottom: "1px solid #eeeeee",
-          marginRight: "-1px",
-          marginBottom: "-1px",
-        };
         break;
-      case "Doctor at Your Fingertip":
+      case "Doctor at\\nYour Fingertip":
         btnType = "doctor-fingertip";
         break;
-      case "ARM-based Processor":
+      case "ARM-based\\nProcessor":
         btnType = "arm-processor";
         break;
-      case "Personal Website":
+      case "Personal\\nWebsite":
         btnType = "personal-website";
-        marginType = {
-          borderLeft: "1px solid #eeeeee",
-          borderTop: "1px solid #eeeeee",
-          marginLeft: "-1px",
-          marginTop: "-1px",
-        };
         break;
       default:
     }
@@ -182,12 +195,11 @@ class ProjectButton extends React.Component {
       <div className="col-4" style={{ padding: 0 }}>
         <div className="btn-container">
           <button
-            className={`btn project-btn ${btnType} `}
+            className={`btn ${btnType} project-btn`}
             onClick={(e) => this.props.handleClick(e)}
-            style={marginType}
             value={btnType}
           >
-            <p className="project-btn-text">{this.props.btnDesc}</p>
+            { newBtnDesc }
           </button>
         </div>
       </div>
@@ -277,7 +289,7 @@ function ProjectLayoutImg(props) {
             className="overlay-content-image"
             src={exData[props.project][props.page]["image"].src}
             alt={exData[props.project][props.page]["image"].alt}
-            style={exData[props.project][props.page]["image"].hasOwnProperty("real") ? 
+            style={exData[props.project][props.page]["image"].hasOwnProperty("border") ? 
             {border: "1px solid #F5F5DC"} :
             {}}
             />
@@ -287,7 +299,7 @@ function ProjectLayoutImg(props) {
               className="overlay-content-image"
               src={exData[props.project][props.page]["video"].src}
               alt={exData[props.project][props.page]["video"].alt}
-              style={exData[props.project][props.page]["video"].hasOwnProperty("real") ? 
+              style={exData[props.project][props.page]["video"].hasOwnProperty("border") ? 
               {border: "1px solid #F5F5DC"} :
               {}}
             />

@@ -1,9 +1,16 @@
-.about-text:first-letter {
-    font-size: 1.5rem;
+.about-left {
+    padding-top: "1rem";
+    display: "flex";
 }
 
 .about-text {
     font-size: 1.25rem; font-family: "Segoe UI";
+}
+
+.about-others {
+    display: "flex";
+    justify-content: "center";
+    flex-direction: "column";
 }
 
 .about-others-text {
@@ -11,6 +18,14 @@
     text-align: center;
     margin: 0 auto;
 }
+
+.about-profile-photo {
+    width: 25vw;
+    clip-path: circle(10vw at center);
+    
+}
+
+
 /*.about-others-text::before {
     position: absolute;
     left: -3rem;
