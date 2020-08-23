@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Switch, Redirect, BrowserRouter } from "react-router-dom";
+import { Route, HashRouter, Redirect, BrowserRouter } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
 import { withRouter } from "react-router-dom";
@@ -97,21 +97,21 @@ class App extends React.Component {
           style={ window.location.pathname.substring(1) !== "home" ?
             { ...appBackgroundImage, ...backgroundOverflow } : 
             { ...appBackgroundImage, ...backgroundOverflow, ...homeHeight }} >
-          <Switch>
-            <Route exact path={process.env.PUBLIC_URL + '/about'}>
+          <HashRouter>
+            <Route exact path="/about">
               <About />
             </Route>
-            <Route exact path={process.env.PUBLIC_URL + '/resume'}>
+            <Route exact path="/resume">
               <Resume />
             </Route>
-            <Route exact path={process.env.PUBLIC_URL + '/projects'}>
+            <Route exact path="/projects">
               <Projects />
             </Route>
-            <Route exact path={process.env.PUBLIC_URL + '/home'}>
+            <Route exact path="/home">
               <Home />
             </Route>
-            <Route exact path={process.env.PUBLIC_URL + '/'}> <Redirect to="/home" /> </Route>
-          </Switch>
+            <Route exact path="/"> <Redirect to="/home" /> </Route>
+          </HashRouter>
         </div>
         {(window.location.pathname.substring(1) !== "home" && window.location.pathname !== "/") &&
           <Footer
