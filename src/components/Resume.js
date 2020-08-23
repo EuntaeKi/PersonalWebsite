@@ -129,12 +129,12 @@ function ResumeContent(props){
     <React.Fragment>
       <p className="resume-cell-subheader">{ props.subheading }</p>
       <p className="resume-cell-subtext">{ props.subtext }</p>
-      <div className="resume-cell-text-container">
+      <ul className="resume-cell-text-container">
         { Object.keys(props.text).map((key, index) => 
             <li className="resume-cell-text" key={ index }> &#183; { props.JSONRef["text"][key] } </li>
           )
         }
-      </div>
+      </ul>
     </React.Fragment>
   )
 }

@@ -27,11 +27,15 @@
     flex-wrap: wrap;
     display: flex;
     line-height: normal;
-    margin-bottom: 0.125rem;
+    margin-bottom: 0.175rem;
 }
 
 .resume-cell-text-container {
-    margin: 0 0 2rem 1rem;
+    margin: 0 0 2rem 0.25rem;
+    padding-left: 0;
+    list-style-position: outside;
+    text-indent: -0.5em;
+    padding-left: 0.5em;
 }
 
 .resume-heading-bar {

@@ -161,9 +161,11 @@ class Footer extends React.Component {
         <SocialMedia />
         <hr id="footer-hr" />
         <div className="row" style={{ margin: "0 0 0.125rem 0" }}>
-          <FontAwesomeIcon
-            style={{ fontSize: "1.25rem", margin: "0 0.25rem 0 auto" }}
-            icon={ faEnvelope } size="2x" transform="shrink-4 up-1" />
+          <a className="footer-mail" style={{ margin: "0 0.25rem 0 auto" }} href="mailto:euntaeki@outlook.com" target="_blank" rel="noreferrer noopener">
+            <FontAwesomeIcon
+              style={{ fontSize: "1.25rem" }}
+              icon={ faEnvelope } size="2x" transform="shrink-4 up-1" />
+          </a>
           <p className="footer-text">|</p>
           <p className="footer-text" style={{ margin: "0 auto 0 0.25rem" }}>euntaeki@outlook.com</p>
         </div>

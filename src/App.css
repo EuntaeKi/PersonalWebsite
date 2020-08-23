@@ -67,6 +67,16 @@ body { height: 100vh; }
   margin-bottom: 0;
 }
 
+.footer-mail {
+  margin: 0 0.25rem 0 auto;
+  color: #CFCFCF;
+  transition: color 0.25s;
+}
+
+.footer-mail:hover {
+  color: #ffffff;
+}
+
 #footer-hr {
   width: 7rem;
   background-color: #eeeeee;

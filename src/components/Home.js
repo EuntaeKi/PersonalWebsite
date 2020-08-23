@@ -11,7 +11,7 @@ class Home extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <div style={{ justifyContent: "center", display: "flex", alignItems:"center", height: "80%" }}>
+        <div style={{ justifyContent: "center", display: "flex", alignItems:"center", height: "80%", textShadow: "2px 4px #838383" }}>
           <Title titleText="Hello World!" center={ true } />
         </div>
       </React.Fragment>
