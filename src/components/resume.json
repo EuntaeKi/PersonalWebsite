@@ -7,6 +7,15 @@
         }
     },
     "projects": {
+        "": {
+        "subheading": "Personal Website", 
+        "subtext": "Personal Project | Jul 2020 - Aug 2020", 
+        "text": [ 
+            "Designed a prototype of the website using Adobe XD",
+            "Implemented the prototype using React.js and Bootstrap",
+            "Stored large text information in JSON files"
+        ]
+    },
         "amazonCarry": {
             "subheading": "Amazon Carry", 
             "subtext": "Embedded System Capstone | Jan 2020 - Mar 2020", 
