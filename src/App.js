@@ -98,19 +98,19 @@ class App extends React.Component {
             { ...appBackgroundImage, ...backgroundOverflow } : 
             { ...appBackgroundImage, ...backgroundOverflow, ...homeHeight }} >
           <Switch>
-            <Route exact path="/about">
+            <Route exact path={process.env.PUBLIC_URL + '/about'}>
               <About />
             </Route>
-            <Route exact path="/resume">
+            <Route exact path={process.env.PUBLIC_URL + '/resume'}>
               <Resume />
             </Route>
-            <Route exact path="/projects">
+            <Route exact path={process.env.PUBLIC_URL + '/projects'}>
               <Projects />
             </Route>
-            <Route exact path="/home">
+            <Route exact path={process.env.PUBLIC_URL + '/home'}>
               <Home />
             </Route>
-            <Route exact path="/"> <Redirect to="/home" /> </Route>
+            <Route exact path={process.env.PUBLIC_URL + '/'}> <Redirect to="/home" /> </Route>
           </Switch>
         </div>
         {(window.location.pathname.substring(1) !== "home" && window.location.pathname !== "/") &&
