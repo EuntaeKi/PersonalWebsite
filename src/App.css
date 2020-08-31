@@ -14,7 +14,7 @@ body { height: 100vh; }
   position: fixed;
   top: 0;
   z-index: 1;
-  color: #ffffff00;
+  color: transparent;
 }
 
 .top-nav-bar-container {
@@ -29,14 +29,14 @@ body { height: 100vh; }
 .butn {
   border-radius: 0px;
   border-width: 0px;
-  background-color: #ffffff00;
-  border-color: #ffffff00;
+  background-color: transparent;
+  border-color: transparent;
   box-shadow: 0 0 0;
   border-style: none;
   color: #CFCFCF;
   padding: 1rem 0.75rem;
   font-size: 1rem;
-  border-bottom: 3px solid #ffffff00;
+  border-bottom: 3px solid transparent;
 }
 
 .hoverbtn {

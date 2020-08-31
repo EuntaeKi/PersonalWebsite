@@ -1,0 +1,51 @@
+@use 'Base';
+
+.title-content {
+    .title-home-margin {
+        margin-top: 30vh;
+    }
+
+    .title-margin {
+        margin-top: 3rem;
+    }
+    
+    .cursor {
+        height: Base.$heading-size-lg;
+        margin: 0 0rem 1rem 0.5rem;
+        border-left-width: 1px;
+        border-left-style: solid;
+    }
+    
+    .cursor-line {
+        border-left-color: Base.$gray;
+    }
+    
+    .cursor-line-transparent {
+        border-left-color: transparent;
+    }
+
+    h1 {
+        font-size: Base.$heading-size-lg;
+        letter-spacing: -0.5rem;
+    }
+
+    .title-text {
+        color: Base.$white;
+    }
+    
+    .title-home {
+        text-shadow: 2px 4px Base.$gray;
+    }
+    
+    @media(max-width: 767px) {
+        .title-home {
+            font-family: SegoeUI;
+            font-weight: 600;
+            text-shadow: 0 3px 3px Base.$black;
+        }
+    }
+}
+
+
+
+

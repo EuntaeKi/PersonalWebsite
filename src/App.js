@@ -60,7 +60,7 @@ class App extends React.Component {
 
     switch(window.location.pathname.substring(1)) {
       case "home":
-        appBackgroundImage = { backgroundImage: `url(${ Background })` };
+        appBackgroundImage = { backgroundImage: `url(${ Background })`, backgroundColor: "#2D253A" };
         navBarColor = { backgroundColor: "transparent" };
         backgroundOverflow = { overflow: "hidden" };
         homeHeight = { height: "100vh" };

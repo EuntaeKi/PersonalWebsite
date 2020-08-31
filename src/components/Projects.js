@@ -64,7 +64,7 @@ class Projects extends React.Component {
     });
     document.body.style = "overflow-y: hidden;";
     let projectText;
-    switch(e.currentTarget.value) {
+    switch (e.currentTarget.value) {
       case "amazon-carry":
         projectText = "Amazon Carry";
         break;
@@ -104,7 +104,7 @@ class Projects extends React.Component {
           >
             {this.state.page !== 0 ? (
               <button
-                className="arrow-wrapper"
+                className="arrow-wrapper flex-center margin-h-center"
                 id="left-arrow-wrapper"
                 value="left-arrow"
               >
@@ -120,12 +120,12 @@ class Projects extends React.Component {
             />
             {this.state.page !== this.state.pageEnd ? (
               <button
-                className="arrow-wrapper"
+                className="arrow-wrapper flex-center margin-h-center"
                 id="right-arrow-wrapper"
                 value="right-arrow"
               >
                 <div
-                  className="arrow"
+                  className="arrow margin-h-center"
                   value="right-arrow"
                   style={{ transform: "rotate(225deg)" }}
                 />
@@ -135,7 +135,7 @@ class Projects extends React.Component {
             )}
           </div>
         </div>
-        <div className="project-btn-container">
+        <div>
           <Title titleText="Projects" />
           <div className="content-container container" id="project-content">
             <div className="row" style={{ marginTop: "4rem" }}>
@@ -172,9 +172,14 @@ class Projects extends React.Component {
 class ProjectButton extends React.Component {
   render() {
     let btnType = "";
-    let newBtnDesc = this.props.btnDesc.split('\\n').map((item, i) => {
-      return <p className="project-btn-text" key={i}>{item}<br /></p>
-    })
+    let newBtnDesc = this.props.btnDesc.split("\\n").map((item, i) => {
+      return (
+        <p className="project-btn-text" key={i}>
+          {item}
+          <br />
+        </p>
+      );
+    });
 
     switch (this.props.btnDesc) {
       case "Amazon\\nCarry":
@@ -199,7 +204,7 @@ class ProjectButton extends React.Component {
             onClick={(e) => this.props.handleClick(e)}
             value={btnType}
           >
-            { newBtnDesc }
+            {newBtnDesc}
           </button>
         </div>
       </div>
@@ -211,21 +216,24 @@ function ProjectLayout(props) {
   var projectList = [];
   let projectLayoutRender;
 
-  if (props.project && exData[props.project][props.page].hasOwnProperty('list')) {
-    for (
-      var i = 0;
-      i < exData[props.project][props.page]["list"].length;
-      i++
-    ) {
+  if (
+    props.project &&
+    exData[props.project][props.page].hasOwnProperty("list")
+  ) {
+    for (var i = 0; i < exData[props.project][props.page]["list"].length; i++) {
       projectList.push(
-        <li key={i}>
-          {exData[props.project][props.page]["list"][i]}
-        </li>
+        <li key={i}>{exData[props.project][props.page]["list"][i]}</li>
       );
     }
   }
 
-  if (props.project && !(exData[props.project][props.page].hasOwnProperty('image') || exData[props.project][props.page].hasOwnProperty('video'))) {
+  if (
+    props.project &&
+    !(
+      exData[props.project][props.page].hasOwnProperty("image") ||
+      exData[props.project][props.page].hasOwnProperty("video")
+    )
+  ) {
     projectLayoutRender = (
       <ProjectLayoutNoImg
         project={props.project}
@@ -233,7 +241,11 @@ function ProjectLayout(props) {
         projectList={projectList}
       />
     );
-  } else if (props.project && (exData[props.project][props.page].hasOwnProperty('image') || exData[props.project][props.page].hasOwnProperty('video'))) {
+  } else if (
+    props.project &&
+    (exData[props.project][props.page].hasOwnProperty("image") ||
+      exData[props.project][props.page].hasOwnProperty("video"))
+  ) {
     projectLayoutRender = (
       <ProjectLayoutImg
         project={props.project}
@@ -263,51 +275,58 @@ function ProjectLayoutImg(props) {
             className="heading-bar"
             style={{ borderColor: "#F5F5DC", margin: "1rem 0" }}
           />
-          { exData[props.project][props.page].hasOwnProperty("subheader") && 
+          {exData[props.project][props.page].hasOwnProperty("subheader") && (
             <p className="overlay-content-subheading">
               {exData[props.project][props.page].subheader}
             </p>
-          }
-          { exData[props.project][props.page].hasOwnProperty("list") && 
-            <ul className="overlay-content-list"> {props.projectList} </ul> 
-          }
-          { exData[props.project][props.page].hasOwnProperty("text") && 
-            <p className="overlay-content-text">{exData[props.project][props.page].text}</p> 
-          }
+          )}
+          {exData[props.project][props.page].hasOwnProperty("list") && (
+            <ul className="overlay-content-list"> {props.projectList} </ul>
+          )}
+          {exData[props.project][props.page].hasOwnProperty("text") && (
+            <p className="overlay-content-text">
+              {exData[props.project][props.page].text}
+            </p>
+          )}
         </div>
         <div
-          className="overlay-content-half col-6"
+          className="overlay-content-half overlay-content-other-half col-6"
           value="content"
-          style={{
-            backgroundColor: "#604C88",
-            borderColor: "#604C88",
-            flexDirection: "column",
-          }}
         >
-          { exData[props.project][props.page].hasOwnProperty("image") && 
+          {exData[props.project][props.page].hasOwnProperty("image") && (
             <img
-            className="overlay-content-image"
-            src={exData[props.project][props.page]["image"].src}
-            alt={exData[props.project][props.page]["image"].alt}
-            style={exData[props.project][props.page]["image"].hasOwnProperty("border") ? 
-            {border: "1px solid #F5F5DC"} :
-            {}}
+              className="overlay-content-image"
+              src={exData[props.project][props.page]["image"].src}
+              alt={exData[props.project][props.page]["image"].alt}
+              style={
+                exData[props.project][props.page]["image"].hasOwnProperty(
+                  "border"
+                )
+                  ? { border: "1px solid #F5F5DC" }
+                  : {}
+              }
             />
-          }
-          { exData[props.project][props.page].hasOwnProperty("video") && 
-            <video loop autoPlay
+          )}
+          {exData[props.project][props.page].hasOwnProperty("video") && (
+            <video
+              loop
+              autoPlay
               className="overlay-content-image"
               src={exData[props.project][props.page]["video"].src}
               alt={exData[props.project][props.page]["video"].alt}
-              style={exData[props.project][props.page]["video"].hasOwnProperty("border") ? 
-              {border: "1px solid #F5F5DC"} :
-              {}}
+              style={
+                exData[props.project][props.page]["video"].hasOwnProperty(
+                  "border"
+                )
+                  ? { border: "1px solid #F5F5DC" }
+                  : {}
+              }
             />
-          }
-          <p className="overlay-content-caption">
-            {exData[props.project][props.page].hasOwnProperty("image") ?
-            exData[props.project][props.page]["image"].caption :
-            exData[props.project][props.page]["video"].caption}
+          )}
+          <p className="overlay-content-caption text-align-center">
+            {exData[props.project][props.page].hasOwnProperty("image")
+              ? exData[props.project][props.page]["image"].caption
+              : exData[props.project][props.page]["video"].caption}
           </p>
         </div>
       </div>
@@ -330,17 +349,19 @@ function ProjectLayoutNoImg(props) {
             className="heading-bar"
             style={{ borderColor: "#F5F5DC", margin: "1rem 0" }}
           />
-          { exData[props.project][props.page].hasOwnProperty("subheader") && 
+          {exData[props.project][props.page].hasOwnProperty("subheader") && (
             <p className="overlay-content-subheading">
               {exData[props.project][props.page].subheader}
             </p>
-          }
-          { exData[props.project][props.page].hasOwnProperty("list") && 
-            <ul className="overlay-content-list"> {props.projectList} </ul> 
-          }
-          { exData[props.project][props.page].hasOwnProperty("text") && 
-            <p className="overlay-content-text">{exData[props.project][props.page].text}</p> 
-          }
+          )}
+          {exData[props.project][props.page].hasOwnProperty("list") && (
+            <ul className="overlay-content-list"> {props.projectList} </ul>
+          )}
+          {exData[props.project][props.page].hasOwnProperty("text") && (
+            <p className="overlay-content-text">
+              {exData[props.project][props.page].text}
+            </p>
+          )}
         </div>
       </div>
     </React.Fragment>

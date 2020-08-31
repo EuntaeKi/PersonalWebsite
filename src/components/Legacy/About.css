@@ -1,0 +1,41 @@
+.about-left {
+    padding-top: 1rem;
+    display: flex;
+}
+
+.about-text {
+    font-size: 1.25rem; 
+    font-family: "Segoe UI";
+}
+
+.about-others {
+    text-align: center;
+    margin: 6rem auto 0 auto;
+}
+
+.about-others-text {
+    margin: 0 auto;
+}
+
+.about-profile-photo {
+    width: 100%;
+    clip-path: circle(50% at center);
+}
+
+
+/*.about-others-text::before {
+    position: absolute;
+    left: -3rem;
+    top: 50%;
+    width: 2rem;
+    border-bottom: 1px solid #eeeeee;
+    content: "";
+}
+.about-others-text::after {
+    position: absolute;
+    right: -5rem;
+    top: 50%;
+    width: 4rem;
+    border-bottom: 1px solid #eeeeee;
+    content: "";
+}*/

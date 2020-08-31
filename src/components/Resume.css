@@ -1,72 +1,99 @@
-.resume-cell-header {
-    border-right: 1px solid #838383;
-    text-align: right;
-    padding-right: 2rem;
-    letter-spacing: -0.25rem;
+.flex-center {
+  justify-content: center;
+  display: flex;
+  align-items: center;
 }
 
-.resume-cell-content {
-    font-family: 'Segoe UI';
-    padding-left: 2rem;
+.margin-h-center {
+  margin: 0 auto;
 }
 
-.resume-cell-subheader {
-    font-weight: bold;
-    font-size: 1.5rem;
-    letter-spacing: 0.5px;
-    margin-top: 0.75rem;
+.margin-v-center {
+  margin: auto 0;
 }
 
-.resume-cell-subtext {
-    font-size: 16px;
-    margin-top: -1.25rem;
-    margin-bottom: 0.25rem;
+.text-align-right {
+  text-align: right;
 }
 
-.resume-cell-text {
-    flex-wrap: wrap;
-    display: flex;
-    line-height: normal;
-    margin-bottom: 0.175rem;
+.text-align-left {
+  text-align: left;
 }
 
-.resume-cell-text-container {
-    margin: 0 0 2rem 0.25rem;
-    padding-left: 0;
-    list-style-position: outside;
-    text-indent: -0.5em;
-    padding-left: 0.5em;
+.text-align-center {
+  text-align: center;
 }
 
-.resume-heading-bar {
-    border-bottom: 0.5rem solid #b7a57a;
-    border-bottom-left-radius: 0.5rem;
-}
-.heading-container {
-    padding-left: 3rem;
+h1 {
+  font-size: 6rem;
 }
 
-.table {
-    width: 100%;
+h2 {
+  font-size: 3rem;
 }
 
-.tright {
-    text-align: right;
+.resume-cell-container .resume-cell-header {
+  border-right: 1px solid #838383;
+  padding-right: 2rem;
+  letter-spacing: -0.25rem;
+  overflow: hidden;
+}
+.resume-cell-container .resume-cell-header .heading-container {
+  margin: 0.5rem 0 0 auto;
+  width: min-content;
+}
+.resume-cell-container .resume-cell-header .heading-container .resume-heading-bar {
+  width: 100%;
+  border-bottom: 0.5rem solid #b7a57a;
+  border-bottom-left-radius: 0.5rem;
+}
+.resume-cell-container .resume-cell-content {
+  font-family: SegoeUI;
+  padding-left: 2rem;
+}
+.resume-cell-container .resume-cell-content .table-container {
+  margin-bottom: 2.5rem;
+}
+.resume-cell-container .resume-cell-content .table-container .table {
+  width: 80%;
+}
+.resume-cell-container .resume-cell-content .table-container .table th {
+  color: #eeeeee;
+  border: none;
+  width: 10%;
+  padding: 0.25rem 0;
+  font-weight: 400;
+}
+.resume-cell-container .resume-cell-content .table-container #tmiddle-left {
+  border-right: 1px solid #eeeeee;
+  padding-right: 0.5rem;
+}
+.resume-cell-container .resume-cell-content .table-container #tmiddle-right {
+  padding-left: 0.5rem;
+}
+.resume-cell-container .resume-cell-subheader {
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+  margin-top: 0.75rem;
+}
+.resume-cell-container .resume-cell-subtext {
+  font-size: 1rem;
+  margin-top: -1.25rem;
+  margin-bottom: 0.25rem;
+}
+.resume-cell-container .resume-cell-text-container {
+  margin: 0 0 2rem 0.25rem;
+  padding-left: 0;
+  list-style-position: outside;
+  text-indent: -0.5rem;
+  padding-left: 0.5rem;
+}
+.resume-cell-container .resume-cell-text-container .resume-cell-text {
+  flex-wrap: wrap;
+  display: flex;
+  line-height: normal;
+  margin-bottom: 0.175rem;
 }
 
-#tmiddle {
-    border-right: 1px solid #eeeeee;
-}
-
-.table th {
-    color: #eeeeee;
-    border: none;
-    width: 10%;
-    padding: 0.25rem 1rem;
-    font-weight: 400;
-}
-
-
-.table-container {
-    margin-bottom: 2.5rem;
-}
+/*# sourceMappingURL=Resume.css.map */

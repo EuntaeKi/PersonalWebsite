@@ -1,0 +1,73 @@
+@use 'Base';
+
+.resume-cell-container {
+    .resume-cell-header {
+        border-right: 1px solid Base.$gray;
+        padding-right: 2rem;
+        letter-spacing: -0.25rem;
+        overflow: hidden;
+        .heading-container {
+            margin: 0.5rem 0 0 auto;
+            width: min-content;
+            .resume-heading-bar {
+                width: 100%;
+                border-bottom: 0.5rem solid Base.$gold;
+                border-bottom-left-radius: 0.5rem;
+            }
+        }
+    }
+
+    .resume-cell-content {
+        font-family: SegoeUI;
+        padding-left: 2rem;
+        .table-container {
+            margin-bottom: 2.5rem;
+            .table {
+                width: 80%;
+                th {
+                    color: Base.$white;
+                    border: none;
+                    width: 10%;
+                    padding: 0.25rem 0;
+                    font-weight: 400;
+                }
+            }
+            
+            #tmiddle-left {
+                border-right: 1px solid Base.$white;
+                padding-right: 0.5rem;
+            }
+
+            #tmiddle-right {
+                padding-left: 0.5rem;
+            }
+        }
+    }
+
+    .resume-cell-subheader {
+        font-size: Base.$font-size-text-md;
+        font-weight: 600;
+        letter-spacing: -0.5px;
+        margin-top: (Base.$font-size-text-md / 2);
+    }
+
+    .resume-cell-subtext {
+        font-size: Base.$font-size-text-xs;
+        margin-top: -1.25rem;
+        margin-bottom: 0.25rem;
+    }
+
+    .resume-cell-text-container {
+        margin: 0 0 2rem 0.25rem;
+        padding-left: 0;
+        list-style-position: outside;
+        text-indent: -0.5rem;
+        padding-left: 0.5rem;
+        .resume-cell-text {
+            flex-wrap: wrap;
+            display: flex;
+            line-height: normal;
+            margin-bottom: 0.175rem;
+        }
+    }
+}

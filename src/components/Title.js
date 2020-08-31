@@ -1,6 +1,6 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './Title.css'
+import './Title.css';
 
 class Title extends React.Component {
     constructor(props) {
@@ -42,20 +42,23 @@ class Title extends React.Component {
             () => this.updateTitle(), 125
         );
     }
-
+    
     componentWillUnmount() {
         clearInterval(this.cursorTimerID);
         clearInterval(this.stringTimerID);
     }
 
     render() {
-        
         return (
             <div className="container">
-                <div className="row" style={ this.props.center || false ? {margin: "0 auto"} : {} }>
-                    <h1 style={ this.props.center !== undefined ? { color: "#eeeeee", margin: "0 0 0 auto" } : { color: "#eeeeee" } }> { this.state.stringHolder } </h1>
-                    { this.state.charNbsp ? <div><span>&nbsp;&nbsp;</span><span>&nbsp;</span></div> : ''}
-                    <div className={ this.state.cursor ? "cursor-line" : "cursor-line-transparent" } style={ this.props.center || false ? { margin: "0 auto 0 0" } : {} } />
+                <div className={`title-content ${ this.props.home ? "flex-center" : "" }`}>
+                    <div className={`row ${ this.props.home ? "title-home-margin" : "title-margin" }`}>
+                        <h1 className={ `title-text ${ this.props.home ? "title-home" : "" }` }> 
+                            { this.state.stringHolder }
+                        </h1>
+                        { this.state.charNbsp ? <div><span>&nbsp;&nbsp;</span><span>&nbsp;</span></div> : ''}
+                        <div className={`cursor ${ this.state.cursor ? "cursor-line" : "cursor-line-transparent" }`} />
+                    </div>
                 </div>
             </div>
         );

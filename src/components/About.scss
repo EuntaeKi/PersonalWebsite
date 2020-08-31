@@ -1,0 +1,16 @@
+@use 'Base';
+
+.about-text {
+    font-size: Base.$font-size-text-sm;
+    font-family: SegoeUI;
+}
+
+.about-others {
+    flex-direction: column;
+    margin: Base.$heading-size-lg auto 0 auto;
+}
+
+.about-profile-photo {
+    width: 100%;
+    clip-path: circle(50% at center);
+}

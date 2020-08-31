@@ -1,44 +1,50 @@
-.about-left {
-    padding-top: "1rem";
-    display: "flex";
+.flex-center {
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
+
+.margin-h-center {
+  margin: 0 auto;
+}
+
+.margin-v-center {
+  margin: auto 0;
+}
+
+.text-align-right {
+  text-align: right;
+}
+
+.text-align-left {
+  text-align: left;
+}
+
+.text-align-center {
+  text-align: center;
+}
+
+h1 {
+  font-size: 6rem;
+}
+
+h2 {
+  font-size: 3rem;
 }
 
 .about-text {
-    font-size: 1.25rem; font-family: "Segoe UI";
+  font-size: 1.25rem;
+  font-family: SegoeUI;
 }
 
 .about-others {
-    display: "flex";
-    justify-content: "center";
-    flex-direction: "column";
-}
-
-.about-others-text {
-    position: relative;
-    text-align: center;
-    margin: 0 auto;
+  flex-direction: column;
+  margin: 6rem auto 0 auto;
 }
 
 .about-profile-photo {
-    width: 25vw;
-    clip-path: circle(10vw at center);
-    
+  width: 100%;
+  clip-path: circle(50% at center);
 }
 
-
-/*.about-others-text::before {
-    position: absolute;
-    left: -3rem;
-    top: 50%;
-    width: 2rem;
-    border-bottom: 1px solid #eeeeee;
-    content: "";
-}
-.about-others-text::after {
-    position: absolute;
-    right: -5rem;
-    top: 50%;
-    width: 4rem;
-    border-bottom: 1px solid #eeeeee;
-    content: "";
-}*/
+/*# sourceMappingURL=About.css.map */

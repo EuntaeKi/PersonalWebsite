@@ -1,0 +1,8 @@
+.home-header {
+    justify-content: center; 
+    display: flex;
+    align-items: center;
+    height: 80%; 
+    text-shadow: 2px 4px #838383; 
+}
+

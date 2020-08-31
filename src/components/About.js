@@ -16,7 +16,7 @@ class About extends React.Component {
         <Title titleText="About Me" />
         <div className="content-container">
           <div className="row">
-              <div className="col-4 about-left">
+              <div className="col-4 about-left flex-center">
                 <img src={ Profile } alt="Profile" className="about-profile-photo" />
               </div>
               <div className="offset-1 col-7">
@@ -32,15 +32,15 @@ class About extends React.Component {
                 </ul>
               </div>
           </div>
-          <hr style={{ width: "25%", backgroundColor: "#eeeeee", height: "0.25rem", border:"none", margin: "3rem auto 3rem auto" }} />
+          <hr style={{ width: "25%", backgroundColor: "#eeeeee", height: "0.25rem", border:"none", margin: "3rem auto 0 auto" }} />
           <div>
-            <div className="about-others" style={{ margin: "4rem 0" }}>
-              <p className="about-others-text"> "A hardworking, <span className="emphasis">curious</span> person who wants to <span className="emphasis">learn</span> more about <span className="emphasis">technology</span>." </p>
-              <p className="about-others-text">Brandon Chong, Project Partner &amp; Front End Developer @ Neeva </p>
+            <div className="about-others text-align-center">
+              <p className="margin-h-center"> "A hardworking, <span className="emphasis">curious</span> person who wants to <span className="emphasis">learn</span> more about <span className="emphasis">technology</span>." </p>
+              <p className="margin-h-center">Brandon Chong, Project Partner &amp; Front End Developer @ Neeva </p>
             </div>
-            <div style={{ marginBottom: "2rem" }}>
-              <p className="about-others-text"> "Hearthstone <span className="emphasis">Legend</span>" </p>
-              <p className="about-others-text"> Hidetaka Yoshino, former College Roommate </p>
+            <div className="about-others text-align-center">
+              <p className="margin-h-center"> "Hearthstone <span className="emphasis">Legend</span>" </p>
+              <p className="margin-h-center"> Hidetaka Yoshino, former College Roommate </p>
             </div>
           </div>
         </div>

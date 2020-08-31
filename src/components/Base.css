@@ -1,0 +1,23 @@
+.flex-center {
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
+
+.margin-h-center {
+  margin: 0 auto;
+}
+
+.margin-v-center {
+  margin: auto 0;
+}
+
+h1 {
+  font-size: 6rem;
+}
+
+h2 {
+  font-size: 3rem;
+}
+
+/*# sourceMappingURL=Base.css.map */

@@ -1,0 +1,72 @@
+.resume-cell-header {
+    border-right: 1px solid #838383;
+    text-align: right;
+    padding-right: 2rem;
+    letter-spacing: -0.25rem;
+}
+
+.resume-cell-content {
+    font-family: 'Segoe UI';
+    padding-left: 2rem;
+}
+
+.resume-cell-subheader {
+    font-weight: bold;
+    font-size: 1.5rem;
+    letter-spacing: 0.5px;
+    margin-top: 0.75rem;
+}
+
+.resume-cell-subtext {
+    font-size: 16px;
+    margin-top: -1.25rem;
+    margin-bottom: 0.25rem;
+}
+
+.resume-cell-text {
+    flex-wrap: wrap;
+    display: flex;
+    line-height: normal;
+    margin-bottom: 0.175rem;
+}
+
+.resume-cell-text-container {
+    margin: 0 0 2rem 0.25rem;
+    padding-left: 0;
+    list-style-position: outside;
+    text-indent: -0.5em;
+    padding-left: 0.5em;
+}
+
+.resume-heading-bar {
+    border-bottom: 0.5rem solid #b7a57a;
+    border-bottom-left-radius: 0.5rem;
+}
+.heading-container {
+    padding-left: 3rem;
+}
+
+.table {
+    width: 100%;
+}
+
+.tright {
+    text-align: right;
+}
+
+#tmiddle {
+    border-right: 1px solid #eeeeee;
+}
+
+.table th {
+    color: #eeeeee;
+    border: none;
+    width: 10%;
+    padding: 0.25rem 1rem;
+    font-weight: 400;
+}
+
+
+.table-container {
+    margin-bottom: 2.5rem;
+}

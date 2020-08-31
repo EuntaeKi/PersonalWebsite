@@ -1,0 +1,176 @@
+/*** General Project Related Styles ***/
+#project-content {
+    padding: 2rem 3rem;
+    width: 100%;
+}
+
+/*** Project Button Background Styles ***/
+.amazon-carry {
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('../img/Amazon_Carry_Background.jpg');
+    background-position: center;
+}
+
+.arm-processor {
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('../img/ARM_Background_BW.jpg'); 
+    background-position: center;
+}
+.doctor-fingertip {
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('../img/DAF_Background.png');
+    background-position: center;
+}
+
+.personal-website {
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('../img/Personal_Website.png');
+    background-size: 225%;
+    background-position: center;
+}
+
+.personal-website:hover {
+    background-size: 250%;
+}
+
+/*** Project Button Styles ***/
+.project-btn-container:focus {
+    border: none;
+    outline: none;
+}
+
+.project-btn {
+    color: #FED0BB;
+    font-weight: normal;
+    opacity: 0.65;
+    width: 100%;
+    height: 350px;
+    border-radius: 0;
+    border: 1px solid #838383;
+    background-size: 130%;
+    filter: grayscale();
+    transition: all 0.2s ease-out;
+}
+
+.project-btn:hover {
+    color: #e6897e;
+    background-size: 145%;
+    opacity: .8;
+    border: 1px solid #cecf97;
+    filter: none;
+}
+
+.project-btn:focus {
+    box-shadow: 0 0 0;
+    outline: 1px solid #838383;
+}
+
+.project-btn-text {
+    font-size: 2.5rem;
+    font-family: 'Segoe UI';
+    font-weight: bold;
+    margin-bottom: 0;
+}
+
+/*** Overlay Styles ***/
+.overlay {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 10;
+    overflow: hidden;
+}
+
+.overlay-content-row {
+    display: flex;
+    height: 100%;
+}
+
+.overlay-content-header {
+    margin-bottom: 0;
+    font-size: 2.5rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.overlay-content-list {
+    font-size: 1.125rem;
+    margin-bottom: 0.5rem;
+}
+
+.overlay-content-subheading {
+    padding-left: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.overlay-content-text {
+    font-size: 1.25rem;
+}
+
+.overlay-content-half {
+    display: flex;
+    flex-direction: column;
+    background-color: #544475;
+    border: 1px solid #544475;
+    margin: 5rem 0rem 2rem 0rem;
+    padding: 2rem 3rem;
+    font-family: 'Segoe UI';
+    height: 85%;
+    overflow: hidden;
+}
+
+.overlay-content-image {
+    width: 100%;
+    margin-top: auto;
+    margin-bottom: 1rem;
+}
+
+.overlay-content-caption {
+    font-size: 1rem;
+    text-align: center;
+    margin-bottom: auto;
+}
+
+/*** Overlay Arrow Styles ***/
+.arrow {
+    width: 1.25rem;
+    height: 1.25rem;
+    border-left: 4px solid #ffffff;
+    border-bottom: 4px solid #ffffff;
+    transform: rotate(45deg);
+    margin: 0 auto;
+    align-self: center;
+}
+
+.arrow-wrapper {
+    display: flex;
+    background-color: #ffffff00;
+    border: none;
+    width: 3rem;
+    height: 3rem;
+    align-self: center;
+    margin: 0 auto;
+}
+
+.arrow-dummy {
+    display: flex;
+    width: 3rem;
+    height: 0;
+    margin: 0 auto;
+}
+
+#right-arrow-wrapper:hover {
+    transition: transform ease-in 0.3s;
+    -webkit-transform: translateX(4px);
+    -moz-transform: translateX(4px);
+    -ms-transform: translateX(4px);
+    transform: translateX(4px);
+}
+
+#left-arrow-wrapper:hover {
+    transition: transform ease-in 0.3s;
+    -webkit-transform: translateX(-4px);
+    -moz-transform: translateX(-4px);
+    -ms-transform: translateX(-4px);
+    transform: translateX(-4px);
+}

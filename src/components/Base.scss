@@ -1,0 +1,56 @@
+$white: #eeeeee;
+$dirty-white: #cccccc;
+$black: #111111;
+$gray: #838383;
+$gold: #b7a57a;
+$skyblue: #7EACBD;
+$primary-color-1: #2D253A;
+$primary-color-2: #3D3350;
+$primary-color-3: #2D324C;
+$overlay-color-1: #544475;
+$overlay-color-2: #604c88;
+$sub-color-1: lighten($primary-color-1, 10%);
+$sub-color-2: lighten($primary-color-2, 10%);
+$sub-color-3: lighten($primary-color-3, 10%);
+$font-size-text-xs: 1rem;
+$font-size-text-sm: 1.25rem;
+$font-size-text-md: 1.5rem;
+$font-size-text-lg: 1.75rem;
+$font-size-text-xl: 2rem;
+$heading-size-sm: 2.5rem;
+$heading-size-md: 3rem;
+$heading-size-lg: 6rem;
+
+.flex-center {
+    justify-content: center; 
+    display: flex;
+    align-items: center;
+}
+
+.margin-h-center {
+    margin: 0 auto;
+}
+
+.margin-v-center {
+    margin: auto 0;
+}
+
+.text-align-right {
+    text-align: right;
+}
+
+.text-align-left {
+    text-align: left;
+}
+
+.text-align-center {
+    text-align: center;
+}
+
+h1 {
+    font-size: $heading-size-lg;
+}
+
+h2 {
+    font-size: $heading-size-md;
+}

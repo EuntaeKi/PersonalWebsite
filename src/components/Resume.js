@@ -19,75 +19,9 @@ class Resume extends React.Component {
     return (
       <React.Fragment>
         <Title titleText="Resume" />
-        <div className="content-container container">
+        <div className="content-container">
           <ResumeCell heading="Education" parsedItems={ ResJSON.education } itemType="education" />
-          <div className="resume-cell-container">
-            <div className="row">
-              <div className="col-4 resume-cell-header">
-                <h2> Skills </h2>
-                <div className="heading-container">
-                  <div className="resume-heading-bar" />
-                </div>
-              </div>
-              <div className="col-8 resume-cell-content">
-                <div className="table-container">
-                  <table className="table" style={{ textAlign: "left", margin: "0 auto 0 0" }}>
-                    <tbody>
-                      <tr>
-                        <th>React.js</th>
-                        <th className="tright" id="tmiddle">
-                          <SkillLevel filled={ 4 } />
-                        </th>
-                        <th>PowerShell</th>
-                        <th className="tright">
-                          <SkillLevel filled={ 3 } />
-                        </th>
-                      </tr>
-                      <tr>
-                        <th>HTML5</th>
-                        <th className="tright" id="tmiddle">
-                          <SkillLevel filled={ 4 } />
-                        </th>
-                        <th>Python</th>
-                        <th className="tright">
-                          <SkillLevel filled={ 3 } />
-                        </th>
-                      </tr>
-                      <tr>
-                        <th>CSS3</th>
-                        <th className="tright" id="tmiddle">
-                          <SkillLevel filled={ 4 } /></th>
-                        <th>Node.js</th>
-                        <th className="tright">
-                          <SkillLevel filled={ 3 } />
-                        </th>
-                      </tr>
-                      <tr>
-                        <th>Java</th>
-                        <th className="tright" id="tmiddle">
-                          <SkillLevel filled={ 3 } />
-                        </th>
-                        <th>SQL</th>
-                        <th className="tright">
-                          <SkillLevel filled={ 3 } />
-                        </th>
-                      </tr>
-                      <tr>
-                        <th>SystemVerilog</th>
-                        <th className="tright" id="tmiddle">
-                          <SkillLevel filled={ 3 } />
-                        </th>
-                        <th>C/C++</th>
-                        <th className="tright">
-                          <SkillLevel filled={ 2 } />
-                        </th>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </div>
-          </div>
+          <ResumeCell heading="Skills" table={ true } />
           <ResumeCell heading="Projects" parsedItems={ ResJSON.projects } itemType="projects" />
           <ResumeCell heading="Work Experience" parsedItems={ ResJSON.workExperience } itemType="workExperience" />
         </div>
@@ -96,35 +30,97 @@ class Resume extends React.Component {
   }
 }
 
-function ResumeCell(props){
+function ResumeCell(props) {
   return (
-      <div className="resume-cell-container">
-        <div className="row">
-          <div className="col-4 resume-cell-header">
+    <div className="resume-cell-container">
+      <div className="row">
+        <div className="col-4 resume-cell-header text-align-right">
+          <div className="heading-container">
             <h2> { props.heading } </h2>
-            <div className="heading-container">
-              <div className="resume-heading-bar" />
-            </div>
-          </div>
-          <div className="col-8 resume-cell-content">
-            { Object.keys(props.parsedItems).map((key, index) => {
-                let tempJSONLoc = ResJSON[props.itemType][key];
-                return <ResumeContent 
-                  key={ index }
-                  subheading={ tempJSONLoc.subheading }
-                  subtext={ tempJSONLoc.subtext } 
-                  text={ tempJSONLoc.text }
-                  JSONRef={ tempJSONLoc }
-                />
-              })
-            }
+            <div className="resume-heading-bar" />
           </div>
         </div>
+        <div className="col-8 resume-cell-content">
+          { props.table ? 
+            <ResumeTable /> : 
+            Object.keys(props.parsedItems).map((key, index) => {
+              let tempJSONLoc = ResJSON[props.itemType][key];
+              return <ResumeContent 
+                key={ index }
+                subheading={ tempJSONLoc.subheading }
+                subtext={ tempJSONLoc.subtext } 
+                text={ tempJSONLoc.text }
+                JSONRef={ tempJSONLoc }
+              />
+            })
+          }
+        </div>
       </div>
-    );
-  }
+    </div>
+  );
+}
 
-function ResumeContent(props){
+function ResumeTable(props) {
+  return (
+    <div className="table-container">
+      <table className="table">
+        <tbody>
+          <tr>
+            <th>React.js</th>
+            <th className="text-align-right" id="tmiddle-left">
+              <SkillLevel filled={ 4 } />
+            </th>
+            <th id="tmiddle-right">PowerShell</th>
+            <th className="text-align-right">
+              <SkillLevel filled={ 3 } />
+            </th>
+          </tr>
+          <tr>
+            <th>HTML5</th>
+            <th className="text-align-right" id="tmiddle-left">
+              <SkillLevel filled={ 4 } />
+            </th>
+            <th id="tmiddle-right">Python</th>
+            <th className="text-align-right">
+              <SkillLevel filled={ 3 } />
+            </th>
+          </tr>
+          <tr>
+            <th>CSS3</th>
+            <th className="text-align-right" id="tmiddle-left">
+              <SkillLevel filled={ 4 } /></th>
+            <th id="tmiddle-right">Node.js</th>
+            <th className="text-align-right">
+              <SkillLevel filled={ 3 } />
+            </th>
+          </tr>
+          <tr>
+            <th>Java</th>
+            <th className="tright" id="tmiddle-left">
+              <SkillLevel filled={ 3 } />
+            </th>
+            <th id="tmiddle-right">SQL</th>
+            <th className="tright">
+              <SkillLevel filled={ 3 } />
+            </th>
+          </tr>
+          <tr>
+            <th>SystemVerilog</th>
+            <th className="tright" id="tmiddle-left">
+              <SkillLevel filled={ 3 } />
+            </th>
+            <th id="tmiddle-right">C/C++</th>
+            <th className="tright">
+              <SkillLevel filled={ 2 } />
+            </th>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  );
+}
+
+function ResumeContent(props) {
   return (
     <React.Fragment>
       <p className="resume-cell-subheader">{ props.subheading }</p>
@@ -139,7 +135,7 @@ function ResumeContent(props){
   )
 }
 
-function SkillLevel(props){
+function SkillLevel(props) {
   var filledStars = [];
   for (var i = 0; i < props.filled; i++) {
     filledStars.push(<FontAwesomeIcon icon={ faStar } size="1x" transform="shrink-4" key={i} />);

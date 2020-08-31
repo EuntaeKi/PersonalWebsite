@@ -13,7 +13,8 @@
         "text": [ 
             "Designed a prototype of the website using Adobe XD",
             "Implemented the prototype using React.js and Bootstrap",
-            "Stored large text information in JSON files"
+            "Stored large text information in JSON files",
+            "Use Sass to factor out the vanilla CSS styles and nest to organize the code"
         ]
     },
         "amazonCarry": {

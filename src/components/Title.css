@@ -1,18 +1,59 @@
-.cursor-line {
-    border-left: 1px solid #838383;
-    height: 6rem;
-    margin: 3.5rem 0rem 1rem 0.5rem;
+.flex-center {
+  justify-content: center;
+  display: flex;
+  align-items: center;
 }
 
-.cursor-line-transparent {
-    border-left: 1px solid #FFFFFF00;
-    height: 6rem;
-    margin: 3.5rem 0rem 1rem 0.5rem;
+.margin-h-center {
+  margin: 0 auto;
+}
+
+.margin-v-center {
+  margin: auto 0;
 }
 
 h1 {
-    font-size: 6rem;
-    margin-bottom: 0;
-    margin-top: 3rem;
-    letter-spacing: -0.5rem;
+  font-size: 6rem;
 }
+
+h2 {
+  font-size: 3rem;
+}
+
+.title-content .title-home-margin {
+  margin-top: 30vh;
+}
+.title-content .title-margin {
+  margin-top: 3rem;
+}
+.title-content .cursor {
+  height: 6rem;
+  margin: 0 0rem 1rem 0.5rem;
+  border-left-width: 1px;
+  border-left-style: solid;
+}
+.title-content .cursor-line {
+  border-left-color: #838383;
+}
+.title-content .cursor-line-transparent {
+  border-left-color: transparent;
+}
+.title-content h1 {
+  font-size: 6rem;
+  letter-spacing: -0.5rem;
+}
+.title-content .title-text {
+  color: #eeeeee;
+}
+.title-content .title-home {
+  text-shadow: 2px 4px #838383;
+}
+@media (max-width: 767px) {
+  .title-content .title-home {
+    font-family: SegoeUI;
+    font-weight: 600;
+    text-shadow: 0 3px 3px #111111;
+  }
+}
+
+/*# sourceMappingURL=Title.css.map */

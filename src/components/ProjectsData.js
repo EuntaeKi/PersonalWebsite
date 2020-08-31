@@ -255,7 +255,8 @@ export const exData = {
                 "Design the prototype with Adobe XD",
                 "Use React.js to design the prototype for re-using components and virtual DOM",
                 "Organize the components using Bootstrap's gridbox system",
-                "Decided not to use Redux and Node.js as the website don't need the server & state management system"
+                "Decided not to use Redux and Node.js as the website don't need the server & state management system",
+                "Use Sass to factor out the vanilla CSS styles and nest to organize the code"
             ],
             "image": {
                 "src": require("../img/PW_P1.png"),
@@ -331,7 +332,6 @@ export const exData = {
             "list": [
                 "Implement mobile-friendly version of the website",
                 "Use React Hooks to re-write the website",
-                "Use SaSS to factor out the vanilla CSS styles"
             ],
             "image": {
                 "src": require("../img/PW_P6.png"),
